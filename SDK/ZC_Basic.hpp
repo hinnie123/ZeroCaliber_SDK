@@ -65,7 +65,7 @@ public:
 	{
 		if (index < NumElements)
 		{
-			return (FUObjectItem*)&Objects[index];
+			return (FUObjectItem*)GetByIndex(index);
 		}
 		return nullptr;
 	}
