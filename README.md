@@ -24,7 +24,7 @@ void init_sdk()
 {
 	SDK::UObject::GObjects = 0;
 
-	auto gname_addr = FindPattern("48 8B 05 ? ? ? ? 48 85 C0 75 55*");
+	auto gname_addr = FindPattern("48 8B 05 ? ? ? ? 48 85 C0 75 55");
 	auto offset = *reinterpret_cast<uint32_t*>gname_addr + 3);
 	SDK::FName::GNames = reinterpret_cast<decltype(SDK::FName::GNames)>(*reinterpret_cast<uintptr_t*>gname_addr + 7 + offset));
 }
