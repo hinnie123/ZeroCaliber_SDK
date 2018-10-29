@@ -4,10 +4,10 @@ SDK for the game ZeroCaliber
 Useful game info:
 ```
 Objects:
-0x2F874E8 (already in sdk)
+0x2F844E8 (already in sdk)
 
 TotalObjects: 
-0x2F874FC (already in sdk)
+0x2F844FC (already in sdk)
 
 GNames:
 48 8B 05 ? ? ? ? 48 85 C0 75 55

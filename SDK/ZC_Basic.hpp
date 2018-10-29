@@ -1,6 +1,6 @@
 #pragma once
 
-// ZeroCaliber (0.0.0) SDK
+// ZeroCaliber (0.3.0 DEMO) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -52,12 +52,12 @@ class TUObjectArray
 public:
 	inline int32_t Num() const
 	{
-		return *(int*)((uintptr_t)GetModuleHandleA(0) + 0x2F874FC);
+		return *(int*)((uintptr_t)GetModuleHandleA(0) + 0x2F844FC);
 	}
 
 	inline UObject* GetByIndex(int32_t index) const
 	{
-		static auto objects = *(uintptr_t*)((uintptr_t)GetModuleHandleA(0) + 0x2F874E8);
+		static auto objects = *(uintptr_t*)((uintptr_t)GetModuleHandleA(0) + 0x2F844E8);
 		return (UObject*)(*(uintptr_t*)(*(uintptr_t*)(objects + 8i64 * (index / 66560)) + 24i64 * (index % 66560)));
 	}
 

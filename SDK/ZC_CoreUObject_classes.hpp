@@ -1,6 +1,6 @@
 #pragma once
 
-// ZeroCaliber (0.0.0) SDK
+// ZeroCaliber (0.3.0 DEMO) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -77,6 +77,7 @@ public:
 	{
 		return GetVFunction<void(*)(UObject*, class UFunction*, void*)>(this, 65)(this, function, parms);
 	}
+
 
 	void ExecuteUbergraph(int EntryPoint);
 };
