@@ -1,6 +1,6 @@
 #pragma once
 
-// ZeroCaliber (0.3.0 DEMO) SDK
+// ZeroCaliber (0.6.0 EA) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -13,7 +13,7 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // WidgetBlueprintGeneratedClass CampaignDetailsWidget.CampaignDetailsWidget_C
-// 0x01E1 (0x03E9 - 0x0208)
+// 0x01F0 (0x03F8 - 0x0208)
 class UCampaignDetailsWidget_C : public UUserWidget
 {
 public:
@@ -49,10 +49,9 @@ public:
 	class UVRGameInstanceVendetta_C*                   VendettaGameInstance;                                     // 0x0330(0x0008) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
 	TEnumAsByte<ECampaignStatusEnum>                   CurrentLevelStatus;                                       // 0x0338(0x0001) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
 	unsigned char                                      UnknownData02[0x7];                                       // 0x0339(0x0007) MISSED OFFSET
-	struct FLevelStruct                                CurrentLevel;                                             // 0x0340(0x0050) (Edit, BlueprintVisible, DisableEditOnInstance)
-	struct FLevelStruct                                ContinueCampaignLevel;                                    // 0x0390(0x0050) (Edit, BlueprintVisible, DisableEditOnInstance)
-	class APlayerEquipmentSaver_C*                     EquipmentSaver;                                           // 0x03E0(0x0008) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, IsPlainOldData)
-	bool                                               LoadContinueLevel;                                        // 0x03E8(0x0001) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	struct FLevelStruct                                CurrentLevel;                                             // 0x0340(0x0058) (Edit, BlueprintVisible, DisableEditOnInstance)
+	struct FLevelStruct                                ContinueCampaignLevel;                                    // 0x0398(0x0058) (Edit, BlueprintVisible, DisableEditOnInstance)
+	class APlayerEquipmentSaver_C*                     EquipmentSaver;                                           // 0x03F0(0x0008) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, IsPlainOldData)
 
 	static UClass* StaticClass()
 	{
@@ -61,18 +60,19 @@ public:
 	}
 
 
+	void FindCurrentLevelIndex(int* Index);
 	void IsLevelLocked(const struct FLevelStruct& Level, bool* Locked);
 	void ChangeStartButtonStyle(TEnumAsByte<ECampaignStatusEnum> LevelStatus);
 	void TurnOnVisibility(bool TurnOn);
-	void Construct();
-	void BndEvt__StartLevelButton_K2Node_ComponentBoundEvent_87_OnButtonReleasedEvent__DelegateSignature();
-	void BndEvt__BackButton_K2Node_ComponentBoundEvent_104_OnButtonReleasedEvent__DelegateSignature();
-	void UpdateDetails(const struct FLevelLoaderStruct& LevelLoaderStruct, TEnumAsByte<ECampaignStatusEnum> CampaignStatus);
-	void UpdateStatus();
-	void OnCurrentLevel(const struct FLevelStruct& Level);
 	void BndEvt__SingleButton_K2Node_ComponentBoundEvent_226_OnButtonReleasedEvent__DelegateSignature();
 	void BndEvt__DoubleButtonLeft_K2Node_ComponentBoundEvent_96_OnButtonReleasedEvent__DelegateSignature();
 	void BndEvt__DoubleButtonRight_K2Node_ComponentBoundEvent_128_OnButtonReleasedEvent__DelegateSignature();
+	void OnCurrentLevel(const struct FLevelStruct& Level);
+	void UpdateStatus();
+	void UpdateDetails(const struct FLevelLoaderStruct& LevelLoaderStruct, TEnumAsByte<ECampaignStatusEnum> CampaignStatus);
+	void BndEvt__BackButton_K2Node_ComponentBoundEvent_104_OnButtonReleasedEvent__DelegateSignature();
+	void BndEvt__StartLevelButton_K2Node_ComponentBoundEvent_87_OnButtonReleasedEvent__DelegateSignature();
+	void Construct();
 	void ExecuteUbergraph_CampaignDetailsWidget(int EntryPoint);
 };
 

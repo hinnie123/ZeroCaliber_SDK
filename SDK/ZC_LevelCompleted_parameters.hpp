@@ -1,6 +1,6 @@
 #pragma once
 
-// ZeroCaliber (0.3.0 DEMO) SDK
+// ZeroCaliber (0.6.0 EA) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -106,6 +106,12 @@ struct ULevelCompleted_C_BndEvt__ButtonNextLevel_K2Node_ComponentBoundEvent_19_O
 struct ULevelCompleted_C_Initialize_Params
 {
 	class AActivatableLevelCompleted_C*                LevelCompleted;                                           // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function LevelCompleted.LevelCompleted_C.DisableButtons
+struct ULevelCompleted_C_DisableButtons_Params
+{
+	bool                                               IsDiable;                                                 // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function LevelCompleted.LevelCompleted_C.ExecuteUbergraph_LevelCompleted

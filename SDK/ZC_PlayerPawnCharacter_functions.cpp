@@ -1,4 +1,4 @@
-// ZeroCaliber (0.3.0 DEMO) SDK
+// ZeroCaliber (0.6.0 EA) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -207,6 +207,56 @@ void APlayerPawnCharacter_C::GetTargetLocation(struct FVector* TargetLocation)
 
 	if (TargetLocation != nullptr)
 		*TargetLocation = params.TargetLocation;
+}
+
+
+// Function PlayerPawnCharacter.PlayerPawnCharacter_C.ResetVelocityScaler
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void APlayerPawnCharacter_C::ResetVelocityScaler()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function PlayerPawnCharacter.PlayerPawnCharacter_C.ResetVelocityScaler");
+
+	APlayerPawnCharacter_C_ResetVelocityScaler_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function PlayerPawnCharacter.PlayerPawnCharacter_C.ForcePullEndCheck
+// (Public, HasOutParms, HasDefaults, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class AActor*                  Actor                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class AGrippableStaticMeshActorBase_C* ForcePullActor                 (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData)
+// class USphereComponent*        GrabSphere                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+// class UObject*                 NearestObjectToHand            (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData)
+// class UGripMotionControllerComponent* CallingMotionController        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+// class UGripMotionControllerComponent* OtherController                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+
+void APlayerPawnCharacter_C::ForcePullEndCheck(class AActor* Actor, class USphereComponent* GrabSphere, class UGripMotionControllerComponent* CallingMotionController, class UGripMotionControllerComponent* OtherController, class AGrippableStaticMeshActorBase_C** ForcePullActor, class UObject** NearestObjectToHand)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function PlayerPawnCharacter.PlayerPawnCharacter_C.ForcePullEndCheck");
+
+	APlayerPawnCharacter_C_ForcePullEndCheck_Params params;
+	params.Actor = Actor;
+	params.GrabSphere = GrabSphere;
+	params.CallingMotionController = CallingMotionController;
+	params.OtherController = OtherController;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	if (ForcePullActor != nullptr)
+		*ForcePullActor = params.ForcePullActor;
+	if (NearestObjectToHand != nullptr)
+		*NearestObjectToHand = params.NearestObjectToHand;
 }
 
 
@@ -1501,14 +1551,14 @@ void APlayerPawnCharacter_C::GetGrippedWeaponWithController(class UGripMotionCon
 }
 
 
-// Function PlayerPawnCharacter.PlayerPawnCharacter_C.Die
+// Function PlayerPawnCharacter.PlayerPawnCharacter_C.DieLocal
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 
-void APlayerPawnCharacter_C::Die()
+void APlayerPawnCharacter_C::DieLocal()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function PlayerPawnCharacter.PlayerPawnCharacter_C.Die");
+	static auto fn = UObject::FindObject<UFunction>("Function PlayerPawnCharacter.PlayerPawnCharacter_C.DieLocal");
 
-	APlayerPawnCharacter_C_Die_Params params;
+	APlayerPawnCharacter_C_DieLocal_Params params;
 
 	auto flags = fn->FunctionFlags;
 
@@ -1870,16 +1920,16 @@ void APlayerPawnCharacter_C::HandGlowLeft__UpdateFunc()
 }
 
 
-// Function PlayerPawnCharacter.PlayerPawnCharacter_C.InpActEvt_MenuLeft_K2Node_InputActionEvent_17
+// Function PlayerPawnCharacter.PlayerPawnCharacter_C.InpActEvt_MenuLeft_K2Node_InputActionEvent_15
 // (BlueprintEvent)
 // Parameters:
 // struct FKey                    Key                            (BlueprintVisible, BlueprintReadOnly, Parm)
 
-void APlayerPawnCharacter_C::InpActEvt_MenuLeft_K2Node_InputActionEvent_17(const struct FKey& Key)
+void APlayerPawnCharacter_C::InpActEvt_MenuLeft_K2Node_InputActionEvent_15(const struct FKey& Key)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function PlayerPawnCharacter.PlayerPawnCharacter_C.InpActEvt_MenuLeft_K2Node_InputActionEvent_17");
+	static auto fn = UObject::FindObject<UFunction>("Function PlayerPawnCharacter.PlayerPawnCharacter_C.InpActEvt_MenuLeft_K2Node_InputActionEvent_15");
 
-	APlayerPawnCharacter_C_InpActEvt_MenuLeft_K2Node_InputActionEvent_17_Params params;
+	APlayerPawnCharacter_C_InpActEvt_MenuLeft_K2Node_InputActionEvent_15_Params params;
 	params.Key = Key;
 
 	auto flags = fn->FunctionFlags;
@@ -1890,16 +1940,16 @@ void APlayerPawnCharacter_C::InpActEvt_MenuLeft_K2Node_InputActionEvent_17(const
 }
 
 
-// Function PlayerPawnCharacter.PlayerPawnCharacter_C.InpActEvt_MenuRight_K2Node_InputActionEvent_16
+// Function PlayerPawnCharacter.PlayerPawnCharacter_C.InpActEvt_MenuRight_K2Node_InputActionEvent_14
 // (BlueprintEvent)
 // Parameters:
 // struct FKey                    Key                            (BlueprintVisible, BlueprintReadOnly, Parm)
 
-void APlayerPawnCharacter_C::InpActEvt_MenuRight_K2Node_InputActionEvent_16(const struct FKey& Key)
+void APlayerPawnCharacter_C::InpActEvt_MenuRight_K2Node_InputActionEvent_14(const struct FKey& Key)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function PlayerPawnCharacter.PlayerPawnCharacter_C.InpActEvt_MenuRight_K2Node_InputActionEvent_16");
+	static auto fn = UObject::FindObject<UFunction>("Function PlayerPawnCharacter.PlayerPawnCharacter_C.InpActEvt_MenuRight_K2Node_InputActionEvent_14");
 
-	APlayerPawnCharacter_C_InpActEvt_MenuRight_K2Node_InputActionEvent_16_Params params;
+	APlayerPawnCharacter_C_InpActEvt_MenuRight_K2Node_InputActionEvent_14_Params params;
 	params.Key = Key;
 
 	auto flags = fn->FunctionFlags;
@@ -1910,16 +1960,16 @@ void APlayerPawnCharacter_C::InpActEvt_MenuRight_K2Node_InputActionEvent_16(cons
 }
 
 
-// Function PlayerPawnCharacter.PlayerPawnCharacter_C.InpActEvt_GripLeft_K2Node_InputActionEvent_15
+// Function PlayerPawnCharacter.PlayerPawnCharacter_C.InpActEvt_GripLeft_K2Node_InputActionEvent_13
 // (BlueprintEvent)
 // Parameters:
 // struct FKey                    Key                            (BlueprintVisible, BlueprintReadOnly, Parm)
 
-void APlayerPawnCharacter_C::InpActEvt_GripLeft_K2Node_InputActionEvent_15(const struct FKey& Key)
+void APlayerPawnCharacter_C::InpActEvt_GripLeft_K2Node_InputActionEvent_13(const struct FKey& Key)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function PlayerPawnCharacter.PlayerPawnCharacter_C.InpActEvt_GripLeft_K2Node_InputActionEvent_15");
+	static auto fn = UObject::FindObject<UFunction>("Function PlayerPawnCharacter.PlayerPawnCharacter_C.InpActEvt_GripLeft_K2Node_InputActionEvent_13");
 
-	APlayerPawnCharacter_C_InpActEvt_GripLeft_K2Node_InputActionEvent_15_Params params;
+	APlayerPawnCharacter_C_InpActEvt_GripLeft_K2Node_InputActionEvent_13_Params params;
 	params.Key = Key;
 
 	auto flags = fn->FunctionFlags;
@@ -1930,16 +1980,16 @@ void APlayerPawnCharacter_C::InpActEvt_GripLeft_K2Node_InputActionEvent_15(const
 }
 
 
-// Function PlayerPawnCharacter.PlayerPawnCharacter_C.InpActEvt_GripLeft_K2Node_InputActionEvent_14
+// Function PlayerPawnCharacter.PlayerPawnCharacter_C.InpActEvt_GripLeft_K2Node_InputActionEvent_12
 // (BlueprintEvent)
 // Parameters:
 // struct FKey                    Key                            (BlueprintVisible, BlueprintReadOnly, Parm)
 
-void APlayerPawnCharacter_C::InpActEvt_GripLeft_K2Node_InputActionEvent_14(const struct FKey& Key)
+void APlayerPawnCharacter_C::InpActEvt_GripLeft_K2Node_InputActionEvent_12(const struct FKey& Key)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function PlayerPawnCharacter.PlayerPawnCharacter_C.InpActEvt_GripLeft_K2Node_InputActionEvent_14");
+	static auto fn = UObject::FindObject<UFunction>("Function PlayerPawnCharacter.PlayerPawnCharacter_C.InpActEvt_GripLeft_K2Node_InputActionEvent_12");
 
-	APlayerPawnCharacter_C_InpActEvt_GripLeft_K2Node_InputActionEvent_14_Params params;
+	APlayerPawnCharacter_C_InpActEvt_GripLeft_K2Node_InputActionEvent_12_Params params;
 	params.Key = Key;
 
 	auto flags = fn->FunctionFlags;
@@ -1950,16 +2000,16 @@ void APlayerPawnCharacter_C::InpActEvt_GripLeft_K2Node_InputActionEvent_14(const
 }
 
 
-// Function PlayerPawnCharacter.PlayerPawnCharacter_C.InpActEvt_GripRight_K2Node_InputActionEvent_13
+// Function PlayerPawnCharacter.PlayerPawnCharacter_C.InpActEvt_GripRight_K2Node_InputActionEvent_11
 // (BlueprintEvent)
 // Parameters:
 // struct FKey                    Key                            (BlueprintVisible, BlueprintReadOnly, Parm)
 
-void APlayerPawnCharacter_C::InpActEvt_GripRight_K2Node_InputActionEvent_13(const struct FKey& Key)
+void APlayerPawnCharacter_C::InpActEvt_GripRight_K2Node_InputActionEvent_11(const struct FKey& Key)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function PlayerPawnCharacter.PlayerPawnCharacter_C.InpActEvt_GripRight_K2Node_InputActionEvent_13");
+	static auto fn = UObject::FindObject<UFunction>("Function PlayerPawnCharacter.PlayerPawnCharacter_C.InpActEvt_GripRight_K2Node_InputActionEvent_11");
 
-	APlayerPawnCharacter_C_InpActEvt_GripRight_K2Node_InputActionEvent_13_Params params;
+	APlayerPawnCharacter_C_InpActEvt_GripRight_K2Node_InputActionEvent_11_Params params;
 	params.Key = Key;
 
 	auto flags = fn->FunctionFlags;
@@ -1970,16 +2020,16 @@ void APlayerPawnCharacter_C::InpActEvt_GripRight_K2Node_InputActionEvent_13(cons
 }
 
 
-// Function PlayerPawnCharacter.PlayerPawnCharacter_C.InpActEvt_GripRight_K2Node_InputActionEvent_12
+// Function PlayerPawnCharacter.PlayerPawnCharacter_C.InpActEvt_GripRight_K2Node_InputActionEvent_10
 // (BlueprintEvent)
 // Parameters:
 // struct FKey                    Key                            (BlueprintVisible, BlueprintReadOnly, Parm)
 
-void APlayerPawnCharacter_C::InpActEvt_GripRight_K2Node_InputActionEvent_12(const struct FKey& Key)
+void APlayerPawnCharacter_C::InpActEvt_GripRight_K2Node_InputActionEvent_10(const struct FKey& Key)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function PlayerPawnCharacter.PlayerPawnCharacter_C.InpActEvt_GripRight_K2Node_InputActionEvent_12");
+	static auto fn = UObject::FindObject<UFunction>("Function PlayerPawnCharacter.PlayerPawnCharacter_C.InpActEvt_GripRight_K2Node_InputActionEvent_10");
 
-	APlayerPawnCharacter_C_InpActEvt_GripRight_K2Node_InputActionEvent_12_Params params;
+	APlayerPawnCharacter_C_InpActEvt_GripRight_K2Node_InputActionEvent_10_Params params;
 	params.Key = Key;
 
 	auto flags = fn->FunctionFlags;
@@ -1990,16 +2040,16 @@ void APlayerPawnCharacter_C::InpActEvt_GripRight_K2Node_InputActionEvent_12(cons
 }
 
 
-// Function PlayerPawnCharacter.PlayerPawnCharacter_C.InpActEvt_TriggerLeft_K2Node_InputActionEvent_11
+// Function PlayerPawnCharacter.PlayerPawnCharacter_C.InpActEvt_TriggerLeft_K2Node_InputActionEvent_9
 // (BlueprintEvent)
 // Parameters:
 // struct FKey                    Key                            (BlueprintVisible, BlueprintReadOnly, Parm)
 
-void APlayerPawnCharacter_C::InpActEvt_TriggerLeft_K2Node_InputActionEvent_11(const struct FKey& Key)
+void APlayerPawnCharacter_C::InpActEvt_TriggerLeft_K2Node_InputActionEvent_9(const struct FKey& Key)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function PlayerPawnCharacter.PlayerPawnCharacter_C.InpActEvt_TriggerLeft_K2Node_InputActionEvent_11");
+	static auto fn = UObject::FindObject<UFunction>("Function PlayerPawnCharacter.PlayerPawnCharacter_C.InpActEvt_TriggerLeft_K2Node_InputActionEvent_9");
 
-	APlayerPawnCharacter_C_InpActEvt_TriggerLeft_K2Node_InputActionEvent_11_Params params;
+	APlayerPawnCharacter_C_InpActEvt_TriggerLeft_K2Node_InputActionEvent_9_Params params;
 	params.Key = Key;
 
 	auto flags = fn->FunctionFlags;
@@ -2010,16 +2060,16 @@ void APlayerPawnCharacter_C::InpActEvt_TriggerLeft_K2Node_InputActionEvent_11(co
 }
 
 
-// Function PlayerPawnCharacter.PlayerPawnCharacter_C.InpActEvt_TriggerLeft_K2Node_InputActionEvent_10
+// Function PlayerPawnCharacter.PlayerPawnCharacter_C.InpActEvt_TriggerLeft_K2Node_InputActionEvent_8
 // (BlueprintEvent)
 // Parameters:
 // struct FKey                    Key                            (BlueprintVisible, BlueprintReadOnly, Parm)
 
-void APlayerPawnCharacter_C::InpActEvt_TriggerLeft_K2Node_InputActionEvent_10(const struct FKey& Key)
+void APlayerPawnCharacter_C::InpActEvt_TriggerLeft_K2Node_InputActionEvent_8(const struct FKey& Key)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function PlayerPawnCharacter.PlayerPawnCharacter_C.InpActEvt_TriggerLeft_K2Node_InputActionEvent_10");
+	static auto fn = UObject::FindObject<UFunction>("Function PlayerPawnCharacter.PlayerPawnCharacter_C.InpActEvt_TriggerLeft_K2Node_InputActionEvent_8");
 
-	APlayerPawnCharacter_C_InpActEvt_TriggerLeft_K2Node_InputActionEvent_10_Params params;
+	APlayerPawnCharacter_C_InpActEvt_TriggerLeft_K2Node_InputActionEvent_8_Params params;
 	params.Key = Key;
 
 	auto flags = fn->FunctionFlags;
@@ -2030,16 +2080,16 @@ void APlayerPawnCharacter_C::InpActEvt_TriggerLeft_K2Node_InputActionEvent_10(co
 }
 
 
-// Function PlayerPawnCharacter.PlayerPawnCharacter_C.InpActEvt_TriggerRight_K2Node_InputActionEvent_9
+// Function PlayerPawnCharacter.PlayerPawnCharacter_C.InpActEvt_TriggerRight_K2Node_InputActionEvent_7
 // (BlueprintEvent)
 // Parameters:
 // struct FKey                    Key                            (BlueprintVisible, BlueprintReadOnly, Parm)
 
-void APlayerPawnCharacter_C::InpActEvt_TriggerRight_K2Node_InputActionEvent_9(const struct FKey& Key)
+void APlayerPawnCharacter_C::InpActEvt_TriggerRight_K2Node_InputActionEvent_7(const struct FKey& Key)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function PlayerPawnCharacter.PlayerPawnCharacter_C.InpActEvt_TriggerRight_K2Node_InputActionEvent_9");
+	static auto fn = UObject::FindObject<UFunction>("Function PlayerPawnCharacter.PlayerPawnCharacter_C.InpActEvt_TriggerRight_K2Node_InputActionEvent_7");
 
-	APlayerPawnCharacter_C_InpActEvt_TriggerRight_K2Node_InputActionEvent_9_Params params;
+	APlayerPawnCharacter_C_InpActEvt_TriggerRight_K2Node_InputActionEvent_7_Params params;
 	params.Key = Key;
 
 	auto flags = fn->FunctionFlags;
@@ -2050,16 +2100,16 @@ void APlayerPawnCharacter_C::InpActEvt_TriggerRight_K2Node_InputActionEvent_9(co
 }
 
 
-// Function PlayerPawnCharacter.PlayerPawnCharacter_C.InpActEvt_TriggerRight_K2Node_InputActionEvent_8
+// Function PlayerPawnCharacter.PlayerPawnCharacter_C.InpActEvt_TriggerRight_K2Node_InputActionEvent_6
 // (BlueprintEvent)
 // Parameters:
 // struct FKey                    Key                            (BlueprintVisible, BlueprintReadOnly, Parm)
 
-void APlayerPawnCharacter_C::InpActEvt_TriggerRight_K2Node_InputActionEvent_8(const struct FKey& Key)
+void APlayerPawnCharacter_C::InpActEvt_TriggerRight_K2Node_InputActionEvent_6(const struct FKey& Key)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function PlayerPawnCharacter.PlayerPawnCharacter_C.InpActEvt_TriggerRight_K2Node_InputActionEvent_8");
+	static auto fn = UObject::FindObject<UFunction>("Function PlayerPawnCharacter.PlayerPawnCharacter_C.InpActEvt_TriggerRight_K2Node_InputActionEvent_6");
 
-	APlayerPawnCharacter_C_InpActEvt_TriggerRight_K2Node_InputActionEvent_8_Params params;
+	APlayerPawnCharacter_C_InpActEvt_TriggerRight_K2Node_InputActionEvent_6_Params params;
 	params.Key = Key;
 
 	auto flags = fn->FunctionFlags;
@@ -2070,16 +2120,16 @@ void APlayerPawnCharacter_C::InpActEvt_TriggerRight_K2Node_InputActionEvent_8(co
 }
 
 
-// Function PlayerPawnCharacter.PlayerPawnCharacter_C.InpActEvt_Skill_AttachmentRelease_K2Node_InputActionEvent_7
+// Function PlayerPawnCharacter.PlayerPawnCharacter_C.InpActEvt_Skill_AttachmentRelease_K2Node_InputActionEvent_5
 // (BlueprintEvent)
 // Parameters:
 // struct FKey                    Key                            (BlueprintVisible, BlueprintReadOnly, Parm)
 
-void APlayerPawnCharacter_C::InpActEvt_Skill_AttachmentRelease_K2Node_InputActionEvent_7(const struct FKey& Key)
+void APlayerPawnCharacter_C::InpActEvt_Skill_AttachmentRelease_K2Node_InputActionEvent_5(const struct FKey& Key)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function PlayerPawnCharacter.PlayerPawnCharacter_C.InpActEvt_Skill_AttachmentRelease_K2Node_InputActionEvent_7");
+	static auto fn = UObject::FindObject<UFunction>("Function PlayerPawnCharacter.PlayerPawnCharacter_C.InpActEvt_Skill_AttachmentRelease_K2Node_InputActionEvent_5");
 
-	APlayerPawnCharacter_C_InpActEvt_Skill_AttachmentRelease_K2Node_InputActionEvent_7_Params params;
+	APlayerPawnCharacter_C_InpActEvt_Skill_AttachmentRelease_K2Node_InputActionEvent_5_Params params;
 	params.Key = Key;
 
 	auto flags = fn->FunctionFlags;
@@ -2090,16 +2140,16 @@ void APlayerPawnCharacter_C::InpActEvt_Skill_AttachmentRelease_K2Node_InputActio
 }
 
 
-// Function PlayerPawnCharacter.PlayerPawnCharacter_C.InpActEvt_Skill_AttachmentRelease_K2Node_InputActionEvent_6
+// Function PlayerPawnCharacter.PlayerPawnCharacter_C.InpActEvt_Skill_AttachmentRelease_K2Node_InputActionEvent_4
 // (BlueprintEvent)
 // Parameters:
 // struct FKey                    Key                            (BlueprintVisible, BlueprintReadOnly, Parm)
 
-void APlayerPawnCharacter_C::InpActEvt_Skill_AttachmentRelease_K2Node_InputActionEvent_6(const struct FKey& Key)
+void APlayerPawnCharacter_C::InpActEvt_Skill_AttachmentRelease_K2Node_InputActionEvent_4(const struct FKey& Key)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function PlayerPawnCharacter.PlayerPawnCharacter_C.InpActEvt_Skill_AttachmentRelease_K2Node_InputActionEvent_6");
+	static auto fn = UObject::FindObject<UFunction>("Function PlayerPawnCharacter.PlayerPawnCharacter_C.InpActEvt_Skill_AttachmentRelease_K2Node_InputActionEvent_4");
 
-	APlayerPawnCharacter_C_InpActEvt_Skill_AttachmentRelease_K2Node_InputActionEvent_6_Params params;
+	APlayerPawnCharacter_C_InpActEvt_Skill_AttachmentRelease_K2Node_InputActionEvent_4_Params params;
 	params.Key = Key;
 
 	auto flags = fn->FunctionFlags;
@@ -2110,16 +2160,16 @@ void APlayerPawnCharacter_C::InpActEvt_Skill_AttachmentRelease_K2Node_InputActio
 }
 
 
-// Function PlayerPawnCharacter.PlayerPawnCharacter_C.InpActEvt_Skill_FireModeChange_K2Node_InputActionEvent_5
+// Function PlayerPawnCharacter.PlayerPawnCharacter_C.InpActEvt_Skill_FireModeChange_K2Node_InputActionEvent_3
 // (BlueprintEvent)
 // Parameters:
 // struct FKey                    Key                            (BlueprintVisible, BlueprintReadOnly, Parm)
 
-void APlayerPawnCharacter_C::InpActEvt_Skill_FireModeChange_K2Node_InputActionEvent_5(const struct FKey& Key)
+void APlayerPawnCharacter_C::InpActEvt_Skill_FireModeChange_K2Node_InputActionEvent_3(const struct FKey& Key)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function PlayerPawnCharacter.PlayerPawnCharacter_C.InpActEvt_Skill_FireModeChange_K2Node_InputActionEvent_5");
+	static auto fn = UObject::FindObject<UFunction>("Function PlayerPawnCharacter.PlayerPawnCharacter_C.InpActEvt_Skill_FireModeChange_K2Node_InputActionEvent_3");
 
-	APlayerPawnCharacter_C_InpActEvt_Skill_FireModeChange_K2Node_InputActionEvent_5_Params params;
+	APlayerPawnCharacter_C_InpActEvt_Skill_FireModeChange_K2Node_InputActionEvent_3_Params params;
 	params.Key = Key;
 
 	auto flags = fn->FunctionFlags;
@@ -2130,16 +2180,16 @@ void APlayerPawnCharacter_C::InpActEvt_Skill_FireModeChange_K2Node_InputActionEv
 }
 
 
-// Function PlayerPawnCharacter.PlayerPawnCharacter_C.InpActEvt_Skill_ReleaseMagazine_K2Node_InputActionEvent_4
+// Function PlayerPawnCharacter.PlayerPawnCharacter_C.InpActEvt_Skill_ReleaseMagazine_K2Node_InputActionEvent_2
 // (BlueprintEvent)
 // Parameters:
 // struct FKey                    Key                            (BlueprintVisible, BlueprintReadOnly, Parm)
 
-void APlayerPawnCharacter_C::InpActEvt_Skill_ReleaseMagazine_K2Node_InputActionEvent_4(const struct FKey& Key)
+void APlayerPawnCharacter_C::InpActEvt_Skill_ReleaseMagazine_K2Node_InputActionEvent_2(const struct FKey& Key)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function PlayerPawnCharacter.PlayerPawnCharacter_C.InpActEvt_Skill_ReleaseMagazine_K2Node_InputActionEvent_4");
+	static auto fn = UObject::FindObject<UFunction>("Function PlayerPawnCharacter.PlayerPawnCharacter_C.InpActEvt_Skill_ReleaseMagazine_K2Node_InputActionEvent_2");
 
-	APlayerPawnCharacter_C_InpActEvt_Skill_ReleaseMagazine_K2Node_InputActionEvent_4_Params params;
+	APlayerPawnCharacter_C_InpActEvt_Skill_ReleaseMagazine_K2Node_InputActionEvent_2_Params params;
 	params.Key = Key;
 
 	auto flags = fn->FunctionFlags;
@@ -2150,56 +2200,16 @@ void APlayerPawnCharacter_C::InpActEvt_Skill_ReleaseMagazine_K2Node_InputActionE
 }
 
 
-// Function PlayerPawnCharacter.PlayerPawnCharacter_C.InpActEvt_Skill_ReleaseSlider_K2Node_InputActionEvent_3
+// Function PlayerPawnCharacter.PlayerPawnCharacter_C.InpActEvt_Skill_ReleaseSlider_K2Node_InputActionEvent_1
 // (BlueprintEvent)
 // Parameters:
 // struct FKey                    Key                            (BlueprintVisible, BlueprintReadOnly, Parm)
 
-void APlayerPawnCharacter_C::InpActEvt_Skill_ReleaseSlider_K2Node_InputActionEvent_3(const struct FKey& Key)
+void APlayerPawnCharacter_C::InpActEvt_Skill_ReleaseSlider_K2Node_InputActionEvent_1(const struct FKey& Key)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function PlayerPawnCharacter.PlayerPawnCharacter_C.InpActEvt_Skill_ReleaseSlider_K2Node_InputActionEvent_3");
+	static auto fn = UObject::FindObject<UFunction>("Function PlayerPawnCharacter.PlayerPawnCharacter_C.InpActEvt_Skill_ReleaseSlider_K2Node_InputActionEvent_1");
 
-	APlayerPawnCharacter_C_InpActEvt_Skill_ReleaseSlider_K2Node_InputActionEvent_3_Params params;
-	params.Key = Key;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function PlayerPawnCharacter.PlayerPawnCharacter_C.InpActEvt_Run_K2Node_InputActionEvent_2
-// (BlueprintEvent)
-// Parameters:
-// struct FKey                    Key                            (BlueprintVisible, BlueprintReadOnly, Parm)
-
-void APlayerPawnCharacter_C::InpActEvt_Run_K2Node_InputActionEvent_2(const struct FKey& Key)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function PlayerPawnCharacter.PlayerPawnCharacter_C.InpActEvt_Run_K2Node_InputActionEvent_2");
-
-	APlayerPawnCharacter_C_InpActEvt_Run_K2Node_InputActionEvent_2_Params params;
-	params.Key = Key;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function PlayerPawnCharacter.PlayerPawnCharacter_C.InpActEvt_Run_K2Node_InputActionEvent_1
-// (BlueprintEvent)
-// Parameters:
-// struct FKey                    Key                            (BlueprintVisible, BlueprintReadOnly, Parm)
-
-void APlayerPawnCharacter_C::InpActEvt_Run_K2Node_InputActionEvent_1(const struct FKey& Key)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function PlayerPawnCharacter.PlayerPawnCharacter_C.InpActEvt_Run_K2Node_InputActionEvent_1");
-
-	APlayerPawnCharacter_C_InpActEvt_Run_K2Node_InputActionEvent_1_Params params;
+	APlayerPawnCharacter_C_InpActEvt_Skill_ReleaseSlider_K2Node_InputActionEvent_1_Params params;
 	params.Key = Key;
 
 	auto flags = fn->FunctionFlags;
@@ -2784,40 +2794,6 @@ void APlayerPawnCharacter_C::TryDropSingleAfterMulti(class UGripMotionController
 	APlayerPawnCharacter_C_TryDropSingleAfterMulti_Params params;
 	params.Controller = Controller;
 	params.ObjectToDrop = ObjectToDrop;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function PlayerPawnCharacter.PlayerPawnCharacter_C.DieServer
-// (Net, NetReliable, NetServer, BlueprintCallable, BlueprintEvent)
-
-void APlayerPawnCharacter_C::DieServer()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function PlayerPawnCharacter.PlayerPawnCharacter_C.DieServer");
-
-	APlayerPawnCharacter_C_DieServer_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function PlayerPawnCharacter.PlayerPawnCharacter_C.DieMulti
-// (Net, NetReliable, NetMulticast, BlueprintCallable, BlueprintEvent)
-
-void APlayerPawnCharacter_C::DieMulti()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function PlayerPawnCharacter.PlayerPawnCharacter_C.DieMulti");
-
-	APlayerPawnCharacter_C_DieMulti_Params params;
 
 	auto flags = fn->FunctionFlags;
 
@@ -3878,7 +3854,7 @@ void APlayerPawnCharacter_C::SetGrenadeSlotAttachedServer(class AGrenadeBase_C* 
 
 
 // Function PlayerPawnCharacter.PlayerPawnCharacter_C.SetGreandeSlot2AttachedServer
-// (BlueprintCallable, BlueprintEvent)
+// (Net, NetReliable, NetServer, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class AGrenadeBase_C*          GrenadeSlotAttached            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 
@@ -4348,6 +4324,226 @@ void APlayerPawnCharacter_C::GripOrDropAllTags(class UGripMotionControllerCompon
 	params.OtherHand = OtherHand;
 	params.IsGrip = IsGrip;
 	params.GrabSphere = GrabSphere;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function PlayerPawnCharacter.PlayerPawnCharacter_C.SetSecondaryGripAsPrimaryServer
+// (Net, NetReliable, NetServer, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class AWeaponBase_C*           Target                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+
+void APlayerPawnCharacter_C::SetSecondaryGripAsPrimaryServer(class AWeaponBase_C* Target)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function PlayerPawnCharacter.PlayerPawnCharacter_C.SetSecondaryGripAsPrimaryServer");
+
+	APlayerPawnCharacter_C_SetSecondaryGripAsPrimaryServer_Params params;
+	params.Target = Target;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function PlayerPawnCharacter.PlayerPawnCharacter_C.LevelDataInitialized
+// (BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class ALevelData_C*            LevelData                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+
+void APlayerPawnCharacter_C::LevelDataInitialized(class ALevelData_C* LevelData)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function PlayerPawnCharacter.PlayerPawnCharacter_C.LevelDataInitialized");
+
+	APlayerPawnCharacter_C_LevelDataInitialized_Params params;
+	params.LevelData = LevelData;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function PlayerPawnCharacter.PlayerPawnCharacter_C.BndEvt__EarLeftCollision_K2Node_ComponentBoundEvent_2_ComponentBeginOverlapSignature__DelegateSignature
+// (HasOutParms, BlueprintEvent)
+// Parameters:
+// class UPrimitiveComponent*     OverlappedComponent            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+// class AActor*                  OtherActor                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UPrimitiveComponent*     OtherComp                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+// int                            OtherBodyIndex                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool                           bFromSweep                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// struct FHitResult              SweepResult                    (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, IsPlainOldData)
+
+void APlayerPawnCharacter_C::BndEvt__EarLeftCollision_K2Node_ComponentBoundEvent_2_ComponentBeginOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, const struct FHitResult& SweepResult)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function PlayerPawnCharacter.PlayerPawnCharacter_C.BndEvt__EarLeftCollision_K2Node_ComponentBoundEvent_2_ComponentBeginOverlapSignature__DelegateSignature");
+
+	APlayerPawnCharacter_C_BndEvt__EarLeftCollision_K2Node_ComponentBoundEvent_2_ComponentBeginOverlapSignature__DelegateSignature_Params params;
+	params.OverlappedComponent = OverlappedComponent;
+	params.OtherActor = OtherActor;
+	params.OtherComp = OtherComp;
+	params.OtherBodyIndex = OtherBodyIndex;
+	params.bFromSweep = bFromSweep;
+	params.SweepResult = SweepResult;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function PlayerPawnCharacter.PlayerPawnCharacter_C.BndEvt__EarRightCollision_K2Node_ComponentBoundEvent_5_ComponentBeginOverlapSignature__DelegateSignature
+// (HasOutParms, BlueprintEvent)
+// Parameters:
+// class UPrimitiveComponent*     OverlappedComponent            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+// class AActor*                  OtherActor                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UPrimitiveComponent*     OtherComp                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+// int                            OtherBodyIndex                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool                           bFromSweep                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// struct FHitResult              SweepResult                    (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, IsPlainOldData)
+
+void APlayerPawnCharacter_C::BndEvt__EarRightCollision_K2Node_ComponentBoundEvent_5_ComponentBeginOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, const struct FHitResult& SweepResult)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function PlayerPawnCharacter.PlayerPawnCharacter_C.BndEvt__EarRightCollision_K2Node_ComponentBoundEvent_5_ComponentBeginOverlapSignature__DelegateSignature");
+
+	APlayerPawnCharacter_C_BndEvt__EarRightCollision_K2Node_ComponentBoundEvent_5_ComponentBeginOverlapSignature__DelegateSignature_Params params;
+	params.OverlappedComponent = OverlappedComponent;
+	params.OtherActor = OtherActor;
+	params.OtherComp = OtherComp;
+	params.OtherBodyIndex = OtherBodyIndex;
+	params.bFromSweep = bFromSweep;
+	params.SweepResult = SweepResult;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function PlayerPawnCharacter.PlayerPawnCharacter_C.StartVoiceChat
+// (BlueprintCallable, BlueprintEvent)
+
+void APlayerPawnCharacter_C::StartVoiceChat()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function PlayerPawnCharacter.PlayerPawnCharacter_C.StartVoiceChat");
+
+	APlayerPawnCharacter_C_StartVoiceChat_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function PlayerPawnCharacter.PlayerPawnCharacter_C.StopVoiceChat
+// (BlueprintCallable, BlueprintEvent)
+
+void APlayerPawnCharacter_C::StopVoiceChat()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function PlayerPawnCharacter.PlayerPawnCharacter_C.StopVoiceChat");
+
+	APlayerPawnCharacter_C_StopVoiceChat_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function PlayerPawnCharacter.PlayerPawnCharacter_C.BndEvt__EarLeftCollision_K2Node_ComponentBoundEvent_3_ComponentEndOverlapSignature__DelegateSignature
+// (BlueprintEvent)
+// Parameters:
+// class UPrimitiveComponent*     OverlappedComponent            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+// class AActor*                  OtherActor                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UPrimitiveComponent*     OtherComp                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+// int                            OtherBodyIndex                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+
+void APlayerPawnCharacter_C::BndEvt__EarLeftCollision_K2Node_ComponentBoundEvent_3_ComponentEndOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function PlayerPawnCharacter.PlayerPawnCharacter_C.BndEvt__EarLeftCollision_K2Node_ComponentBoundEvent_3_ComponentEndOverlapSignature__DelegateSignature");
+
+	APlayerPawnCharacter_C_BndEvt__EarLeftCollision_K2Node_ComponentBoundEvent_3_ComponentEndOverlapSignature__DelegateSignature_Params params;
+	params.OverlappedComponent = OverlappedComponent;
+	params.OtherActor = OtherActor;
+	params.OtherComp = OtherComp;
+	params.OtherBodyIndex = OtherBodyIndex;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function PlayerPawnCharacter.PlayerPawnCharacter_C.BndEvt__EarRightCollision_K2Node_ComponentBoundEvent_6_ComponentEndOverlapSignature__DelegateSignature
+// (BlueprintEvent)
+// Parameters:
+// class UPrimitiveComponent*     OverlappedComponent            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+// class AActor*                  OtherActor                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UPrimitiveComponent*     OtherComp                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+// int                            OtherBodyIndex                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+
+void APlayerPawnCharacter_C::BndEvt__EarRightCollision_K2Node_ComponentBoundEvent_6_ComponentEndOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function PlayerPawnCharacter.PlayerPawnCharacter_C.BndEvt__EarRightCollision_K2Node_ComponentBoundEvent_6_ComponentEndOverlapSignature__DelegateSignature");
+
+	APlayerPawnCharacter_C_BndEvt__EarRightCollision_K2Node_ComponentBoundEvent_6_ComponentEndOverlapSignature__DelegateSignature_Params params;
+	params.OverlappedComponent = OverlappedComponent;
+	params.OtherActor = OtherActor;
+	params.OtherComp = OtherComp;
+	params.OtherBodyIndex = OtherBodyIndex;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function PlayerPawnCharacter.PlayerPawnCharacter_C.TriggerRightVoiceChatEvent
+// (BlueprintCallable, BlueprintEvent)
+
+void APlayerPawnCharacter_C::TriggerRightVoiceChatEvent()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function PlayerPawnCharacter.PlayerPawnCharacter_C.TriggerRightVoiceChatEvent");
+
+	APlayerPawnCharacter_C_TriggerRightVoiceChatEvent_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function PlayerPawnCharacter.PlayerPawnCharacter_C.TriggerLeftVoiceChatEvent
+// (BlueprintCallable, BlueprintEvent)
+
+void APlayerPawnCharacter_C::TriggerLeftVoiceChatEvent()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function PlayerPawnCharacter.PlayerPawnCharacter_C.TriggerLeftVoiceChatEvent");
+
+	APlayerPawnCharacter_C_TriggerLeftVoiceChatEvent_Params params;
 
 	auto flags = fn->FunctionFlags;
 

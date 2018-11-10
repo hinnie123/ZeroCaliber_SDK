@@ -1,6 +1,6 @@
 #pragma once
 
-// ZeroCaliber (0.3.0 DEMO) SDK
+// ZeroCaliber (0.6.0 EA) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -13,6 +13,17 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Parameters
 //---------------------------------------------------------------------------
+
+// Function MultiplayerHostWidget.MultiplayerHostWidget_C.ChangeFriendlyFire
+struct UMultiplayerHostWidget_C_ChangeFriendlyFire_Params
+{
+};
+
+// Function MultiplayerHostWidget.MultiplayerHostWidget_C.InitDataTable
+struct UMultiplayerHostWidget_C_InitDataTable_Params
+{
+	class UDataTable*                                  DataTable;                                                // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+};
 
 // Function MultiplayerHostWidget.MultiplayerHostWidget_C.SaveEquipments
 struct UMultiplayerHostWidget_C_SaveEquipments_Params
@@ -107,8 +118,8 @@ struct UMultiplayerHostWidget_C_OnSuccess_7310540C4F8B3170EE2F1A92D1A399EE_Param
 {
 };
 
-// Function MultiplayerHostWidget.MultiplayerHostWidget_C.Construct
-struct UMultiplayerHostWidget_C_Construct_Params
+// Function MultiplayerHostWidget.MultiplayerHostWidget_C.RefreshList
+struct UMultiplayerHostWidget_C_RefreshList_Params
 {
 };
 
@@ -117,8 +128,8 @@ struct UMultiplayerHostWidget_C_BndEvt__BackButton_K2Node_ComponentBoundEvent_38
 {
 };
 
-// Function MultiplayerHostWidget.MultiplayerHostWidget_C.RefreshList
-struct UMultiplayerHostWidget_C_RefreshList_Params
+// Function MultiplayerHostWidget.MultiplayerHostWidget_C.Construct
+struct UMultiplayerHostWidget_C_Construct_Params
 {
 };
 
@@ -190,6 +201,16 @@ struct UMultiplayerHostWidget_C_BndEvt__ButtonPassTextBox_K2Node_ComponentBoundE
 
 // Function MultiplayerHostWidget.MultiplayerHostWidget_C.BndEvt__RemovePasswd_K2Node_ComponentBoundEvent_141_OnButtonReleasedEvent__DelegateSignature
 struct UMultiplayerHostWidget_C_BndEvt__RemovePasswd_K2Node_ComponentBoundEvent_141_OnButtonReleasedEvent__DelegateSignature_Params
+{
+};
+
+// Function MultiplayerHostWidget.MultiplayerHostWidget_C.BndEvt__ButtonFriendlyFireRight_K2Node_ComponentBoundEvent_0_OnButtonReleasedEvent__DelegateSignature
+struct UMultiplayerHostWidget_C_BndEvt__ButtonFriendlyFireRight_K2Node_ComponentBoundEvent_0_OnButtonReleasedEvent__DelegateSignature_Params
+{
+};
+
+// Function MultiplayerHostWidget.MultiplayerHostWidget_C.BndEvt__ButtonFriendlyFireLeft_K2Node_ComponentBoundEvent_1_OnButtonReleasedEvent__DelegateSignature
+struct UMultiplayerHostWidget_C_BndEvt__ButtonFriendlyFireLeft_K2Node_ComponentBoundEvent_1_OnButtonReleasedEvent__DelegateSignature_Params
 {
 };
 

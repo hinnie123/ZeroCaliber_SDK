@@ -1,4 +1,4 @@
-// ZeroCaliber (0.3.0 DEMO) SDK
+// ZeroCaliber (0.6.0 EA) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -11,6 +11,28 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Functions
 //---------------------------------------------------------------------------
+
+// Function CampaignDetailsWidget.CampaignDetailsWidget_C.FindCurrentLevelIndex
+// (Public, HasOutParms, HasDefaults, BlueprintCallable, BlueprintEvent, BlueprintPure)
+// Parameters:
+// int                            Index                          (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+
+void UCampaignDetailsWidget_C::FindCurrentLevelIndex(int* Index)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function CampaignDetailsWidget.CampaignDetailsWidget_C.FindCurrentLevelIndex");
+
+	UCampaignDetailsWidget_C_FindCurrentLevelIndex_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	if (Index != nullptr)
+		*Index = params.Index;
+}
+
 
 // Function CampaignDetailsWidget.CampaignDetailsWidget_C.IsLevelLocked
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
@@ -76,116 +98,6 @@ void UCampaignDetailsWidget_C::TurnOnVisibility(bool TurnOn)
 }
 
 
-// Function CampaignDetailsWidget.CampaignDetailsWidget_C.Construct
-// (BlueprintCosmetic, Event, Public, BlueprintEvent)
-
-void UCampaignDetailsWidget_C::Construct()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function CampaignDetailsWidget.CampaignDetailsWidget_C.Construct");
-
-	UCampaignDetailsWidget_C_Construct_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function CampaignDetailsWidget.CampaignDetailsWidget_C.BndEvt__StartLevelButton_K2Node_ComponentBoundEvent_87_OnButtonReleasedEvent__DelegateSignature
-// (BlueprintEvent)
-
-void UCampaignDetailsWidget_C::BndEvt__StartLevelButton_K2Node_ComponentBoundEvent_87_OnButtonReleasedEvent__DelegateSignature()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function CampaignDetailsWidget.CampaignDetailsWidget_C.BndEvt__StartLevelButton_K2Node_ComponentBoundEvent_87_OnButtonReleasedEvent__DelegateSignature");
-
-	UCampaignDetailsWidget_C_BndEvt__StartLevelButton_K2Node_ComponentBoundEvent_87_OnButtonReleasedEvent__DelegateSignature_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function CampaignDetailsWidget.CampaignDetailsWidget_C.BndEvt__BackButton_K2Node_ComponentBoundEvent_104_OnButtonReleasedEvent__DelegateSignature
-// (BlueprintEvent)
-
-void UCampaignDetailsWidget_C::BndEvt__BackButton_K2Node_ComponentBoundEvent_104_OnButtonReleasedEvent__DelegateSignature()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function CampaignDetailsWidget.CampaignDetailsWidget_C.BndEvt__BackButton_K2Node_ComponentBoundEvent_104_OnButtonReleasedEvent__DelegateSignature");
-
-	UCampaignDetailsWidget_C_BndEvt__BackButton_K2Node_ComponentBoundEvent_104_OnButtonReleasedEvent__DelegateSignature_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function CampaignDetailsWidget.CampaignDetailsWidget_C.UpdateDetails
-// (BlueprintCallable, BlueprintEvent)
-// Parameters:
-// struct FLevelLoaderStruct      LevelLoaderStruct              (BlueprintVisible, BlueprintReadOnly, Parm)
-// TEnumAsByte<ECampaignStatusEnum> CampaignStatus                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-
-void UCampaignDetailsWidget_C::UpdateDetails(const struct FLevelLoaderStruct& LevelLoaderStruct, TEnumAsByte<ECampaignStatusEnum> CampaignStatus)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function CampaignDetailsWidget.CampaignDetailsWidget_C.UpdateDetails");
-
-	UCampaignDetailsWidget_C_UpdateDetails_Params params;
-	params.LevelLoaderStruct = LevelLoaderStruct;
-	params.CampaignStatus = CampaignStatus;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function CampaignDetailsWidget.CampaignDetailsWidget_C.UpdateStatus
-// (BlueprintCallable, BlueprintEvent)
-
-void UCampaignDetailsWidget_C::UpdateStatus()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function CampaignDetailsWidget.CampaignDetailsWidget_C.UpdateStatus");
-
-	UCampaignDetailsWidget_C_UpdateStatus_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function CampaignDetailsWidget.CampaignDetailsWidget_C.OnCurrentLevel
-// (BlueprintCallable, BlueprintEvent)
-// Parameters:
-// struct FLevelStruct            Level                          (BlueprintVisible, BlueprintReadOnly, Parm)
-
-void UCampaignDetailsWidget_C::OnCurrentLevel(const struct FLevelStruct& Level)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function CampaignDetailsWidget.CampaignDetailsWidget_C.OnCurrentLevel");
-
-	UCampaignDetailsWidget_C_OnCurrentLevel_Params params;
-	params.Level = Level;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
 // Function CampaignDetailsWidget.CampaignDetailsWidget_C.BndEvt__SingleButton_K2Node_ComponentBoundEvent_226_OnButtonReleasedEvent__DelegateSignature
 // (BlueprintEvent)
 
@@ -228,6 +140,116 @@ void UCampaignDetailsWidget_C::BndEvt__DoubleButtonRight_K2Node_ComponentBoundEv
 	static auto fn = UObject::FindObject<UFunction>("Function CampaignDetailsWidget.CampaignDetailsWidget_C.BndEvt__DoubleButtonRight_K2Node_ComponentBoundEvent_128_OnButtonReleasedEvent__DelegateSignature");
 
 	UCampaignDetailsWidget_C_BndEvt__DoubleButtonRight_K2Node_ComponentBoundEvent_128_OnButtonReleasedEvent__DelegateSignature_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function CampaignDetailsWidget.CampaignDetailsWidget_C.OnCurrentLevel
+// (BlueprintCallable, BlueprintEvent)
+// Parameters:
+// struct FLevelStruct            Level                          (BlueprintVisible, BlueprintReadOnly, Parm)
+
+void UCampaignDetailsWidget_C::OnCurrentLevel(const struct FLevelStruct& Level)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function CampaignDetailsWidget.CampaignDetailsWidget_C.OnCurrentLevel");
+
+	UCampaignDetailsWidget_C_OnCurrentLevel_Params params;
+	params.Level = Level;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function CampaignDetailsWidget.CampaignDetailsWidget_C.UpdateStatus
+// (BlueprintCallable, BlueprintEvent)
+
+void UCampaignDetailsWidget_C::UpdateStatus()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function CampaignDetailsWidget.CampaignDetailsWidget_C.UpdateStatus");
+
+	UCampaignDetailsWidget_C_UpdateStatus_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function CampaignDetailsWidget.CampaignDetailsWidget_C.UpdateDetails
+// (BlueprintCallable, BlueprintEvent)
+// Parameters:
+// struct FLevelLoaderStruct      LevelLoaderStruct              (BlueprintVisible, BlueprintReadOnly, Parm)
+// TEnumAsByte<ECampaignStatusEnum> CampaignStatus                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+
+void UCampaignDetailsWidget_C::UpdateDetails(const struct FLevelLoaderStruct& LevelLoaderStruct, TEnumAsByte<ECampaignStatusEnum> CampaignStatus)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function CampaignDetailsWidget.CampaignDetailsWidget_C.UpdateDetails");
+
+	UCampaignDetailsWidget_C_UpdateDetails_Params params;
+	params.LevelLoaderStruct = LevelLoaderStruct;
+	params.CampaignStatus = CampaignStatus;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function CampaignDetailsWidget.CampaignDetailsWidget_C.BndEvt__BackButton_K2Node_ComponentBoundEvent_104_OnButtonReleasedEvent__DelegateSignature
+// (BlueprintEvent)
+
+void UCampaignDetailsWidget_C::BndEvt__BackButton_K2Node_ComponentBoundEvent_104_OnButtonReleasedEvent__DelegateSignature()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function CampaignDetailsWidget.CampaignDetailsWidget_C.BndEvt__BackButton_K2Node_ComponentBoundEvent_104_OnButtonReleasedEvent__DelegateSignature");
+
+	UCampaignDetailsWidget_C_BndEvt__BackButton_K2Node_ComponentBoundEvent_104_OnButtonReleasedEvent__DelegateSignature_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function CampaignDetailsWidget.CampaignDetailsWidget_C.BndEvt__StartLevelButton_K2Node_ComponentBoundEvent_87_OnButtonReleasedEvent__DelegateSignature
+// (BlueprintEvent)
+
+void UCampaignDetailsWidget_C::BndEvt__StartLevelButton_K2Node_ComponentBoundEvent_87_OnButtonReleasedEvent__DelegateSignature()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function CampaignDetailsWidget.CampaignDetailsWidget_C.BndEvt__StartLevelButton_K2Node_ComponentBoundEvent_87_OnButtonReleasedEvent__DelegateSignature");
+
+	UCampaignDetailsWidget_C_BndEvt__StartLevelButton_K2Node_ComponentBoundEvent_87_OnButtonReleasedEvent__DelegateSignature_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function CampaignDetailsWidget.CampaignDetailsWidget_C.Construct
+// (BlueprintCosmetic, Event, Public, BlueprintEvent)
+
+void UCampaignDetailsWidget_C::Construct()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function CampaignDetailsWidget.CampaignDetailsWidget_C.Construct");
+
+	UCampaignDetailsWidget_C_Construct_Params params;
 
 	auto flags = fn->FunctionFlags;
 

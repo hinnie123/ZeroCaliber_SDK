@@ -1,6 +1,6 @@
 #pragma once
 
-// ZeroCaliber (0.3.0 DEMO) SDK
+// ZeroCaliber (0.6.0 EA) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -13,7 +13,7 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // BlueprintGeneratedClass MenuActor_Multiplayer.MenuActor_Multiplayer_C
-// 0x0090 (0x03E8 - 0x0358)
+// 0x0098 (0x03F0 - 0x0358)
 class AMenuActor_Multiplayer_C : public AMenuActor_C
 {
 public:
@@ -40,6 +40,7 @@ public:
 	class UJoiningNotificationWidget_C*                JoiningNotificationWidgetObject;                          // 0x03D0(0x0008) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, IsPlainOldData)
 	class APlayerPawnCharacter_C*                      Player;                                                   // 0x03D8(0x0008) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, IsPlainOldData)
 	struct FTimerHandle                                CheckPlayerLaserBeamHandler;                              // 0x03E0(0x0008) (Edit, BlueprintVisible, DisableEditOnInstance)
+	class UDataTable*                                  MultiplayerDataTable;                                     // 0x03E8(0x0008) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
 
 	static UClass* StaticClass()
 	{

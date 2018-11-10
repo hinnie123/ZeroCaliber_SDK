@@ -1,4 +1,4 @@
-// ZeroCaliber (0.3.0 DEMO) SDK
+// ZeroCaliber (0.6.0 EA) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -337,13 +337,15 @@ void UScrollableLevelSelectorWidget_C::ScrollElementAt(int Index)
 // (HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // TArray<struct FLevelStruct>    Levels                         (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm)
+// int                            CurrentLevelIndex              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 
-void UScrollableLevelSelectorWidget_C::InitLevels(TArray<struct FLevelStruct> Levels)
+void UScrollableLevelSelectorWidget_C::InitLevels(TArray<struct FLevelStruct> Levels, int CurrentLevelIndex)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function ScrollableLevelSelectorWidget.ScrollableLevelSelectorWidget_C.InitLevels");
 
 	UScrollableLevelSelectorWidget_C_InitLevels_Params params;
 	params.Levels = Levels;
+	params.CurrentLevelIndex = CurrentLevelIndex;
 
 	auto flags = fn->FunctionFlags;
 

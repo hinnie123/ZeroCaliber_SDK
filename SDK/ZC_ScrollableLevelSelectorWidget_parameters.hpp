@@ -1,6 +1,6 @@
 #pragma once
 
-// ZeroCaliber (0.3.0 DEMO) SDK
+// ZeroCaliber (0.6.0 EA) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -111,6 +111,7 @@ struct UScrollableLevelSelectorWidget_C_ScrollElementAt_Params
 struct UScrollableLevelSelectorWidget_C_InitLevels_Params
 {
 	TArray<struct FLevelStruct>                        Levels;                                                   // (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm)
+	int                                                CurrentLevelIndex;                                        // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function ScrollableLevelSelectorWidget.ScrollableLevelSelectorWidget_C.Tick

@@ -1,6 +1,6 @@
 #pragma once
 
-// ZeroCaliber (0.3.0 DEMO) SDK
+// ZeroCaliber (0.6.0 EA) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -13,7 +13,7 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // BlueprintGeneratedClass ActivatableSoundDialogue_new.ActivatableSoundDialogue_new_C
-// 0x0035 (0x0435 - 0x0400)
+// 0x0036 (0x0436 - 0x0400)
 class AActivatableSoundDialogue_new_C : public AActivatableSoundDialogue_C
 {
 public:
@@ -25,6 +25,7 @@ public:
 	class AMessageQueueBase_C*                         MessageQueue;                                             // 0x0428(0x0008) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, IsPlainOldData)
 	int                                                RadioVoice;                                               // 0x0430(0x0004) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
 	bool                                               VoiceLocation;                                            // 0x0434(0x0001) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	bool                                               VO_duck;                                                  // 0x0435(0x0001) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
 
 	static UClass* StaticClass()
 	{

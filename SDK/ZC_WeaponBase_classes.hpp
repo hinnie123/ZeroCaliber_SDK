@@ -1,6 +1,6 @@
 #pragma once
 
-// ZeroCaliber (0.3.0 DEMO) SDK
+// ZeroCaliber (0.6.0 EA) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -13,7 +13,7 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // BlueprintGeneratedClass WeaponBase.WeaponBase_C
-// 0x04A6 (0x0E70 - 0x09CA)
+// 0x04B6 (0x0E80 - 0x09CA)
 class AWeaponBase_C : public AGunBase_C
 {
 public:
@@ -61,7 +61,7 @@ public:
 	class UClass*                                      ProjectileFriend;                                         // 0x0AD0(0x0008) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
 	class UClass*                                      Cartridge;                                                // 0x0AD8(0x0008) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
 	class UClass*                                      CartridgeCase;                                            // 0x0AE0(0x0008) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	float                                              CartridgeCaseEjectionSpeed;                               // 0x0AE8(0x0004) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	float                                              CartridgeCaseEjectionImpulse;                             // 0x0AE8(0x0004) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
 	bool                                               CockedManually;                                           // 0x0AEC(0x0001) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
 	unsigned char                                      UnknownData04[0x3];                                       // 0x0AED(0x0003) MISSED OFFSET
 	float                                              RecoilOneHandMultiplier;                                  // 0x0AF0(0x0004) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
@@ -140,13 +140,15 @@ public:
 	unsigned char                                      UnknownData21[0x4];                                       // 0x0E4C(0x0004) MISSED OFFSET
 	struct FName                                       HandNameLeft_1;                                           // 0x0E50(0x0008) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
 	struct FName                                       HandNameRight;                                            // 0x0E58(0x0008) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	bool                                               SecondaryGripAsPrimary;                                   // 0x0E60(0x0001) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	bool                                               SecondaryGripAsPrimary;                                   // 0x0E60(0x0001) (Edit, BlueprintVisible, Net, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
 	bool                                               SlideBacked;                                              // 0x0E61(0x0001) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
 	bool                                               AutoSliderRelease;                                        // 0x0E62(0x0001) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
 	bool                                               SliderStaysBackWhenEmptied;                               // 0x0E63(0x0001) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
 	bool                                               SecondaryGripAsPrimaryAllowed;                            // 0x0E64(0x0001) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
 	unsigned char                                      UnknownData22[0x3];                                       // 0x0E65(0x0003) MISSED OFFSET
 	class UFMODEvent*                                  SoundEmptyFmod;                                           // 0x0E68(0x0008) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	class UFMODEvent*                                  SoundLastBulletFMOD;                                      // 0x0E70(0x0008) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	class UStaticMeshComponent*                        AttachmentIndicatorMesh;                                  // 0x0E78(0x0008) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, IsPlainOldData)
 
 	static UClass* StaticClass()
 	{
@@ -155,6 +157,9 @@ public:
 	}
 
 
+	void CheckAttachmnetInOtherHand(class UGripMotionControllerComponent* GrippingController, bool* Bool, class AAttachableStaticMeshActorBase_C** Attachment);
+	void TurnOnAttachmentIndicator(TEnumAsByte<EAttachmentCategory> AttachmentCategory, bool TurnOn, class AAttachableStaticMeshActorBase_C* Attachment);
+	void OnRep_SecondaryGripAsPrimary();
 	void AttachmentAttachTransforms(class AAttachableStaticMeshActorBase_C* Attachment);
 	void OnRep_Magazine();
 	void OnRep_AttachmentStock();
@@ -185,7 +190,7 @@ public:
 	void GetAdditionalRecoilForAttachment(bool OneHanded, class AAttachableStaticMeshActorBase_C* Attachment, float* RecoilBack, float* RecoilHorizontal, float* RecoilVertical);
 	void InstantCocking();
 	void GetAdditionalRecoil(bool OneHanded, float* RecoilBack, float* RecoilHorizontal, float* RecoilVertical);
-	void AttachmentAttachCheck(class AAttachableStaticMeshActorBase_C* Attachment, class AActor* NewAttachment, TEnumAsByte<EAttachmentCategory> AttachmentCategory, bool* Attachable, class AAttachableStaticMeshActorBase_C** AttachableAttachment);
+	void AttachmentAttachCheck(class AAttachableStaticMeshActorBase_C* Attachment, class AActor* NewAttachment, TEnumAsByte<EAttachmentCategory> AttachmentCategory, bool* Attachable, class AAttachableStaticMeshActorBase_C** AttachableAttachment, bool* IsIndicatorShown);
 	void AttachmentReleaseLocal(class AAttachmentBase_C* Attachment);
 	void AttachmentAttach(class AAttachableStaticMeshActorBase_C* Attachment);
 	void AmmoFired();

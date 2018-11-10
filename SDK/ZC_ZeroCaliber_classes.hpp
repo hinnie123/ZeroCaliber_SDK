@@ -1,6 +1,6 @@
 #pragma once
 
-// ZeroCaliber (0.3.0 DEMO) SDK
+// ZeroCaliber (0.6.0 EA) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -26,6 +26,24 @@ public:
 		return ptr;
 	}
 
+};
+
+
+// Class ZeroCaliber.VRPlayerControllerCustom
+// 0x0000 (0x0688 - 0x0688)
+class AVRPlayerControllerCustom : public AVRPlayerController
+{
+public:
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("Class ZeroCaliber.VRPlayerControllerCustom");
+		return ptr;
+	}
+
+
+	void StopVoiceChat();
+	void StartVoiceChat();
 };
 
 

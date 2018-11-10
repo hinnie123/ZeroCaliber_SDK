@@ -1,4 +1,4 @@
-// ZeroCaliber (0.3.0 DEMO) SDK
+// ZeroCaliber (0.6.0 EA) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -20,40 +20,6 @@ void AWeapon_M4A1_C::UserConstructionScript()
 	static auto fn = UObject::FindObject<UFunction>("Function Weapon_M4A1.Weapon_M4A1_C.UserConstructionScript");
 
 	AWeapon_M4A1_C_UserConstructionScript_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function Weapon_M4A1.Weapon_M4A1_C.EjectShellPos__FinishedFunc
-// (BlueprintEvent)
-
-void AWeapon_M4A1_C::EjectShellPos__FinishedFunc()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function Weapon_M4A1.Weapon_M4A1_C.EjectShellPos__FinishedFunc");
-
-	AWeapon_M4A1_C_EjectShellPos__FinishedFunc_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function Weapon_M4A1.Weapon_M4A1_C.EjectShellPos__UpdateFunc
-// (BlueprintEvent)
-
-void AWeapon_M4A1_C::EjectShellPos__UpdateFunc()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function Weapon_M4A1.Weapon_M4A1_C.EjectShellPos__UpdateFunc");
-
-	AWeapon_M4A1_C_EjectShellPos__UpdateFunc_Params params;
 
 	auto flags = fn->FunctionFlags;
 
@@ -88,6 +54,74 @@ void AWeapon_M4A1_C::ShellTray__UpdateFunc()
 	static auto fn = UObject::FindObject<UFunction>("Function Weapon_M4A1.Weapon_M4A1_C.ShellTray__UpdateFunc");
 
 	AWeapon_M4A1_C_ShellTray__UpdateFunc_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function Weapon_M4A1.Weapon_M4A1_C.Timeline_0__FinishedFunc
+// (BlueprintEvent)
+
+void AWeapon_M4A1_C::Timeline_0__FinishedFunc()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function Weapon_M4A1.Weapon_M4A1_C.Timeline_0__FinishedFunc");
+
+	AWeapon_M4A1_C_Timeline_0__FinishedFunc_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function Weapon_M4A1.Weapon_M4A1_C.Timeline_0__UpdateFunc
+// (BlueprintEvent)
+
+void AWeapon_M4A1_C::Timeline_0__UpdateFunc()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function Weapon_M4A1.Weapon_M4A1_C.Timeline_0__UpdateFunc");
+
+	AWeapon_M4A1_C_Timeline_0__UpdateFunc_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function Weapon_M4A1.Weapon_M4A1_C.EjectShellPos__FinishedFunc
+// (BlueprintEvent)
+
+void AWeapon_M4A1_C::EjectShellPos__FinishedFunc()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function Weapon_M4A1.Weapon_M4A1_C.EjectShellPos__FinishedFunc");
+
+	AWeapon_M4A1_C_EjectShellPos__FinishedFunc_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function Weapon_M4A1.Weapon_M4A1_C.EjectShellPos__UpdateFunc
+// (BlueprintEvent)
+
+void AWeapon_M4A1_C::EjectShellPos__UpdateFunc()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function Weapon_M4A1.Weapon_M4A1_C.EjectShellPos__UpdateFunc");
+
+	AWeapon_M4A1_C_EjectShellPos__UpdateFunc_Params params;
 
 	auto flags = fn->FunctionFlags;
 
@@ -173,6 +207,46 @@ void AWeapon_M4A1_C::ChamberAmmo()
 	static auto fn = UObject::FindObject<UFunction>("Function Weapon_M4A1.Weapon_M4A1_C.ChamberAmmo");
 
 	AWeapon_M4A1_C_ChamberAmmo_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function Weapon_M4A1.Weapon_M4A1_C.AttachmentAttachLocal
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class AAttachableStaticMeshActorBase_C** Attachment                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+
+void AWeapon_M4A1_C::AttachmentAttachLocal(class AAttachableStaticMeshActorBase_C** Attachment)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function Weapon_M4A1.Weapon_M4A1_C.AttachmentAttachLocal");
+
+	AWeapon_M4A1_C_AttachmentAttachLocal_Params params;
+	params.Attachment = Attachment;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function Weapon_M4A1.Weapon_M4A1_C.AttachmentReleaseLocal
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class AAttachmentBase_C**      Attachment                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+
+void AWeapon_M4A1_C::AttachmentReleaseLocal(class AAttachmentBase_C** Attachment)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function Weapon_M4A1.Weapon_M4A1_C.AttachmentReleaseLocal");
+
+	AWeapon_M4A1_C_AttachmentReleaseLocal_Params params;
+	params.Attachment = Attachment;
 
 	auto flags = fn->FunctionFlags;
 

@@ -1,4 +1,4 @@
-// ZeroCaliber (0.3.0 DEMO) SDK
+// ZeroCaliber (0.6.0 EA) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -330,6 +330,26 @@ void ULevelCompleted_C::Initialize(class AActivatableLevelCompleted_C* LevelComp
 
 	ULevelCompleted_C_Initialize_Params params;
 	params.LevelCompleted = LevelCompleted;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function LevelCompleted.LevelCompleted_C.DisableButtons
+// (BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                           IsDiable                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+
+void ULevelCompleted_C::DisableButtons(bool IsDiable)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function LevelCompleted.LevelCompleted_C.DisableButtons");
+
+	ULevelCompleted_C_DisableButtons_Params params;
+	params.IsDiable = IsDiable;
 
 	auto flags = fn->FunctionFlags;
 

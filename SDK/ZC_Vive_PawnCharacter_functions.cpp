@@ -1,4 +1,4 @@
-// ZeroCaliber (0.3.0 DEMO) SDK
+// ZeroCaliber (0.6.0 EA) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -11,28 +11,6 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Functions
 //---------------------------------------------------------------------------
-
-// Function Vive_PawnCharacter.Vive_PawnCharacter_C.CheckSteamControllerType
-// (Public, HasOutParms, HasDefaults, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// bool                           IsKnuckles                     (Parm, OutParm, ZeroConstructor, IsPlainOldData)
-
-void AVive_PawnCharacter_C::CheckSteamControllerType(bool* IsKnuckles)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function Vive_PawnCharacter.Vive_PawnCharacter_C.CheckSteamControllerType");
-
-	AVive_PawnCharacter_C_CheckSteamControllerType_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	if (IsKnuckles != nullptr)
-		*IsKnuckles = params.IsKnuckles;
-}
-
 
 // Function Vive_PawnCharacter.Vive_PawnCharacter_C.InitTeleportControllers
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
@@ -141,28 +119,6 @@ void AVive_PawnCharacter_C::OnRep_LeftControllerOffset()
 	UObject::ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
-}
-
-
-// Function Vive_PawnCharacter.Vive_PawnCharacter_C.LoadControllerModels
-// (Public, HasOutParms, HasDefaults, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// bool                           Succeeded                      (Parm, OutParm, ZeroConstructor, IsPlainOldData)
-
-void AVive_PawnCharacter_C::LoadControllerModels(bool* Succeeded)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function Vive_PawnCharacter.Vive_PawnCharacter_C.LoadControllerModels");
-
-	AVive_PawnCharacter_C_LoadControllerModels_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	if (Succeeded != nullptr)
-		*Succeeded = params.Succeeded;
 }
 
 

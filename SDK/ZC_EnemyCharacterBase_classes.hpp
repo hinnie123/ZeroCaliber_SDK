@@ -1,6 +1,6 @@
 #pragma once
 
-// ZeroCaliber (0.3.0 DEMO) SDK
+// ZeroCaliber (0.6.0 EA) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -134,7 +134,7 @@ public:
 	void FireWeaponStart();
 	void OnRep_MaxWalkSpeedCurrent();
 	void OnRep_PrimaryWeapon();
-	void DifficultySetting();
+	void DifficultySetting(class ALevelData_C* LevelData);
 	void HeadshotIndicatorSound(class AController* Instigator, const struct FName& BoneName);
 	void GetTarget(struct FVector* Location);
 	void PlayGearMovementSound(TEnumAsByte<EStepType> StepType);
@@ -166,6 +166,7 @@ public:
 	void HitReactionEvent(float HitReactionTime);
 	void HitReactionSpeed(bool HitReaction);
 	void ReceiveEndPlay(TEnumAsByte<EEndPlayReason>* EndPlayReason);
+	void LevelDataInitialized(class ALevelData_C* LevelData);
 	void ExecuteUbergraph_EnemyCharacterBase(int EntryPoint);
 	void HitReactionDispatcher__DelegateSignature(bool HitReaction);
 	void EnemyDied__DelegateSignature(class AEnemyCharacterBase_C* Enemy, class AController* Instigator);

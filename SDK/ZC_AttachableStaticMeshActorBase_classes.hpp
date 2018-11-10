@@ -1,6 +1,6 @@
 #pragma once
 
-// ZeroCaliber (0.3.0 DEMO) SDK
+// ZeroCaliber (0.6.0 EA) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -45,6 +45,7 @@ public:
 	}
 
 
+	void IsOtherHandHoldingWeapon(class UGripMotionControllerComponent* Controller, class UGripMotionControllerComponent* OtherController, bool* Bool, class AWeaponBase_C** Weapon);
 	void ModifyCollisionWhenBlocked(bool ShouldCollide);
 	void ClosestGripSlotInRange(struct FVector* WorldLocation, bool* bSecondarySlot, class UGripMotionControllerComponent** CallingController, struct FName* OverridePrefix, bool* bHadSlotInRange, struct FTransform* SlotWorldTransform);
 	void CanBeDetached(class UGripMotionControllerComponent* GrippingController, bool* Detachable);
@@ -57,6 +58,7 @@ public:
 	void DeactivateWhenWeaponReleased();
 	void ActivateWhenWeaponGripped(EControllerHand Hand);
 	void AttachSound(float ReloadType);
+	void OnGripRelease(class UGripMotionControllerComponent** ReleasingController, struct FBPActorGripInformation* GripInformation, bool* bWasSocketed);
 	void ExecuteUbergraph_AttachableStaticMeshActorBase(int EntryPoint);
 };
 

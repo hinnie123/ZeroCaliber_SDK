@@ -1,6 +1,6 @@
 #pragma once
 
-// ZeroCaliber (0.3.0 DEMO) SDK
+// ZeroCaliber (0.6.0 EA) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -107,13 +107,11 @@ public:
 	}
 
 
-	void CheckSteamControllerType(bool* IsKnuckles);
 	void InitTeleportControllers(class APlayerState* ValidPlayerState);
 	void ShouldSocketGrip(struct FBPActorGripInformation* Grip, bool* ShouldSocket, class USceneComponent** SocketParent, struct FTransform_NetQuantize* RelativeTransform, struct FName* OptionalSocketName);
 	void RepositionHandElements(bool IsRightHand, const struct FTransform& NewTransformForProcComps);
 	void OnRep_RightControllerOffset();
 	void OnRep_LeftControllerOffset();
-	void LoadControllerModels(bool* Succeeded);
 	void SetGripComponents(class UPrimitiveComponent* LeftHand, class UPrimitiveComponent* RightHand);
 	void GetCorrectRotation(struct FRotator* NewParam);
 	void CanAttemptSecondaryGrabOnObject(class UObject* ObjectToCheck, bool* CanAttemptSecondaryGrab, ESecondaryGripType* SecondaryGripType);

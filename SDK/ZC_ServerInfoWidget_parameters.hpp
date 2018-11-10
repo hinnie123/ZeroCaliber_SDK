@@ -1,6 +1,6 @@
 #pragma once
 
-// ZeroCaliber (0.3.0 DEMO) SDK
+// ZeroCaliber (0.6.0 EA) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -17,7 +17,8 @@ namespace SDK
 // Function ServerInfoWidget.ServerInfoWidget_C.Highlight
 struct UServerInfoWidget_C_Highlight_Params
 {
-	bool                                               bHighlight;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class UImage*                                      Background;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+	struct FSlateColor                                 Color;                                                    // (BlueprintVisible, BlueprintReadOnly, Parm)
 };
 
 // Function ServerInfoWidget.ServerInfoWidget_C.LoadServerInfo
@@ -26,13 +27,18 @@ struct UServerInfoWidget_C_LoadServerInfo_Params
 	struct FBlueprintSessionResult                     SessionResult;                                            // (BlueprintVisible, BlueprintReadOnly, Parm)
 };
 
-// Function ServerInfoWidget.ServerInfoWidget_C.BndEvt__JoinButton_K2Node_ComponentBoundEvent_372_OnButtonReleasedEvent__DelegateSignature
-struct UServerInfoWidget_C_BndEvt__JoinButton_K2Node_ComponentBoundEvent_372_OnButtonReleasedEvent__DelegateSignature_Params
+// Function ServerInfoWidget.ServerInfoWidget_C.Construct
+struct UServerInfoWidget_C_Construct_Params
 {
 };
 
 // Function ServerInfoWidget.ServerInfoWidget_C.BndEvt__InfoButton_K2Node_ComponentBoundEvent_347_OnButtonReleasedEvent__DelegateSignature
 struct UServerInfoWidget_C_BndEvt__InfoButton_K2Node_ComponentBoundEvent_347_OnButtonReleasedEvent__DelegateSignature_Params
+{
+};
+
+// Function ServerInfoWidget.ServerInfoWidget_C.BndEvt__JoinButton_K2Node_ComponentBoundEvent_372_OnButtonReleasedEvent__DelegateSignature
+struct UServerInfoWidget_C_BndEvt__JoinButton_K2Node_ComponentBoundEvent_372_OnButtonReleasedEvent__DelegateSignature_Params
 {
 };
 
@@ -43,11 +49,6 @@ struct UServerInfoWidget_C_BndEvt__InfoButton_K2Node_ComponentBoundEvent_489_OnB
 
 // Function ServerInfoWidget.ServerInfoWidget_C.BndEvt__InfoButton_K2Node_ComponentBoundEvent_501_OnButtonHoverEvent__DelegateSignature
 struct UServerInfoWidget_C_BndEvt__InfoButton_K2Node_ComponentBoundEvent_501_OnButtonHoverEvent__DelegateSignature_Params
-{
-};
-
-// Function ServerInfoWidget.ServerInfoWidget_C.Construct
-struct UServerInfoWidget_C_Construct_Params
 {
 };
 

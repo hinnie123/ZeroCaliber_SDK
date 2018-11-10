@@ -1,6 +1,6 @@
 #pragma once
 
-// ZeroCaliber (0.3.0 DEMO) SDK
+// ZeroCaliber (0.6.0 EA) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -13,6 +13,27 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Parameters
 //---------------------------------------------------------------------------
+
+// Function WeaponBase.WeaponBase_C.CheckAttachmnetInOtherHand
+struct AWeaponBase_C_CheckAttachmnetInOtherHand_Params
+{
+	class UGripMotionControllerComponent*              GrippingController;                                       // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+	bool                                               Bool;                                                     // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+	class AAttachableStaticMeshActorBase_C*            Attachment;                                               // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function WeaponBase.WeaponBase_C.TurnOnAttachmentIndicator
+struct AWeaponBase_C_TurnOnAttachmentIndicator_Params
+{
+	TEnumAsByte<EAttachmentCategory>                   AttachmentCategory;                                       // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               TurnOn;                                                   // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class AAttachableStaticMeshActorBase_C*            Attachment;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function WeaponBase.WeaponBase_C.OnRep_SecondaryGripAsPrimary
+struct AWeaponBase_C_OnRep_SecondaryGripAsPrimary_Params
+{
+};
 
 // Function WeaponBase.WeaponBase_C.AttachmentAttachTransforms
 struct AWeaponBase_C_AttachmentAttachTransforms_Params
@@ -200,6 +221,7 @@ struct AWeaponBase_C_AttachmentAttachCheck_Params
 	TEnumAsByte<EAttachmentCategory>                   AttachmentCategory;                                       // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 	bool                                               Attachable;                                               // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 	class AAttachableStaticMeshActorBase_C*            AttachableAttachment;                                     // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+	bool                                               IsIndicatorShown;                                         // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function WeaponBase.WeaponBase_C.AttachmentReleaseLocal

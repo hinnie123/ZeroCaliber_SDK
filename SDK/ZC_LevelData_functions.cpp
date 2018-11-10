@@ -1,4 +1,4 @@
-// ZeroCaliber (0.3.0 DEMO) SDK
+// ZeroCaliber (0.6.0 EA) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -11,6 +11,23 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Functions
 //---------------------------------------------------------------------------
+
+// Function LevelData.LevelData_C.HandleOculusFocusState
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void ALevelData_C::HandleOculusFocusState()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function LevelData.LevelData_C.HandleOculusFocusState");
+
+	ALevelData_C_HandleOculusFocusState_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function LevelData.LevelData_C.UserConstructionScript
 // (Event, Public, BlueprintCallable, BlueprintEvent)

@@ -1,6 +1,6 @@
 #pragma once
 
-// ZeroCaliber (0.3.0 DEMO) SDK
+// ZeroCaliber (0.6.0 EA) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -67,6 +67,7 @@ struct AEnemyCharacterBase_C_OnRep_PrimaryWeapon_Params
 // Function EnemyCharacterBase.EnemyCharacterBase_C.DifficultySetting
 struct AEnemyCharacterBase_C_DifficultySetting_Params
 {
+	class ALevelData_C*                                LevelData;                                                // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function EnemyCharacterBase.EnemyCharacterBase_C.HeadshotIndicatorSound
@@ -266,6 +267,12 @@ struct AEnemyCharacterBase_C_HitReactionSpeed_Params
 struct AEnemyCharacterBase_C_ReceiveEndPlay_Params
 {
 	TEnumAsByte<EEndPlayReason>*                       EndPlayReason;                                            // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function EnemyCharacterBase.EnemyCharacterBase_C.LevelDataInitialized
+struct AEnemyCharacterBase_C_LevelDataInitialized_Params
+{
+	class ALevelData_C*                                LevelData;                                                // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function EnemyCharacterBase.EnemyCharacterBase_C.ExecuteUbergraph_EnemyCharacterBase

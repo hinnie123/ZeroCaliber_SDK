@@ -1,6 +1,6 @@
 #pragma once
 
-// ZeroCaliber (0.3.0 DEMO) SDK
+// ZeroCaliber (0.6.0 EA) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -13,11 +13,11 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // BlueprintGeneratedClass weapon_mp5.weapon_MP5_C
-// 0x0008 (0x0E78 - 0x0E70)
+// 0x0008 (0x0E88 - 0x0E80)
 class Aweapon_MP5_C : public AWeaponBase_C
 {
 public:
-	class UStaticMeshComponent*                        ShellEjectStaticMesh;                                     // 0x0E70(0x0008) (BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData)
+	class UStaticMeshComponent*                        ShellEjectStaticMesh;                                     // 0x0E80(0x0008) (BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData)
 
 	static UClass* StaticClass()
 	{

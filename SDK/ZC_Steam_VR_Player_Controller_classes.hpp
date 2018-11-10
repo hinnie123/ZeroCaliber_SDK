@@ -1,6 +1,6 @@
 #pragma once
 
-// ZeroCaliber (0.3.0 DEMO) SDK
+// ZeroCaliber (0.6.0 EA) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -14,7 +14,7 @@ namespace SDK
 
 // BlueprintGeneratedClass Steam_VR_Player_Controller.Steam_VR_Player_Controller_C
 // 0x0010 (0x0698 - 0x0688)
-class ASteam_VR_Player_Controller_C : public AVRPlayerController
+class ASteam_VR_Player_Controller_C : public AVRPlayerControllerCustom
 {
 public:
 	struct FPointerToUberGraphFrame                    UberGraphFrame;                                           // 0x0688(0x0008) (Transient, DuplicateTransient)
@@ -32,8 +32,8 @@ public:
 	void OffsetSpawnByCapsuleHalfHeight(class APlayerStart* PlayerStart, const struct FVector& OffsetVector, struct FVector* OffsetVectorFinal);
 	void InitiateHMD();
 	void UserConstructionScript();
-	void ReturnHMDStatus(bool bHMDEnabled, const struct FVector& HMDOffset, const struct FRotator& HMDRotation);
 	void InitHMD(bool bHasHMD);
+	void ReturnHMDStatus(bool bHMDEnabled, const struct FVector& HMDOffset, const struct FRotator& HMDRotation);
 	void ReceiveBeginPlay();
 	void ExecuteUbergraph_Steam_VR_Player_Controller(int EntryPoint);
 };

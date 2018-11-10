@@ -1,4 +1,4 @@
-// ZeroCaliber (0.3.0 DEMO) SDK
+// ZeroCaliber (0.6.0 EA) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -13,16 +13,18 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // Function ServerInfoWidget.ServerInfoWidget_C.Highlight
-// (Public, BlueprintCallable, BlueprintEvent)
+// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           bHighlight                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UImage*                  Background                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+// struct FSlateColor             Color                          (BlueprintVisible, BlueprintReadOnly, Parm)
 
-void UServerInfoWidget_C::Highlight(bool bHighlight)
+void UServerInfoWidget_C::Highlight(class UImage* Background, const struct FSlateColor& Color)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function ServerInfoWidget.ServerInfoWidget_C.Highlight");
 
 	UServerInfoWidget_C_Highlight_Params params;
-	params.bHighlight = bHighlight;
+	params.Background = Background;
+	params.Color = Color;
 
 	auto flags = fn->FunctionFlags;
 
@@ -52,14 +54,14 @@ void UServerInfoWidget_C::LoadServerInfo(const struct FBlueprintSessionResult& S
 }
 
 
-// Function ServerInfoWidget.ServerInfoWidget_C.BndEvt__JoinButton_K2Node_ComponentBoundEvent_372_OnButtonReleasedEvent__DelegateSignature
-// (BlueprintEvent)
+// Function ServerInfoWidget.ServerInfoWidget_C.Construct
+// (BlueprintCosmetic, Event, Public, BlueprintEvent)
 
-void UServerInfoWidget_C::BndEvt__JoinButton_K2Node_ComponentBoundEvent_372_OnButtonReleasedEvent__DelegateSignature()
+void UServerInfoWidget_C::Construct()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function ServerInfoWidget.ServerInfoWidget_C.BndEvt__JoinButton_K2Node_ComponentBoundEvent_372_OnButtonReleasedEvent__DelegateSignature");
+	static auto fn = UObject::FindObject<UFunction>("Function ServerInfoWidget.ServerInfoWidget_C.Construct");
 
-	UServerInfoWidget_C_BndEvt__JoinButton_K2Node_ComponentBoundEvent_372_OnButtonReleasedEvent__DelegateSignature_Params params;
+	UServerInfoWidget_C_Construct_Params params;
 
 	auto flags = fn->FunctionFlags;
 
@@ -77,6 +79,23 @@ void UServerInfoWidget_C::BndEvt__InfoButton_K2Node_ComponentBoundEvent_347_OnBu
 	static auto fn = UObject::FindObject<UFunction>("Function ServerInfoWidget.ServerInfoWidget_C.BndEvt__InfoButton_K2Node_ComponentBoundEvent_347_OnButtonReleasedEvent__DelegateSignature");
 
 	UServerInfoWidget_C_BndEvt__InfoButton_K2Node_ComponentBoundEvent_347_OnButtonReleasedEvent__DelegateSignature_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function ServerInfoWidget.ServerInfoWidget_C.BndEvt__JoinButton_K2Node_ComponentBoundEvent_372_OnButtonReleasedEvent__DelegateSignature
+// (BlueprintEvent)
+
+void UServerInfoWidget_C::BndEvt__JoinButton_K2Node_ComponentBoundEvent_372_OnButtonReleasedEvent__DelegateSignature()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function ServerInfoWidget.ServerInfoWidget_C.BndEvt__JoinButton_K2Node_ComponentBoundEvent_372_OnButtonReleasedEvent__DelegateSignature");
+
+	UServerInfoWidget_C_BndEvt__JoinButton_K2Node_ComponentBoundEvent_372_OnButtonReleasedEvent__DelegateSignature_Params params;
 
 	auto flags = fn->FunctionFlags;
 
@@ -111,23 +130,6 @@ void UServerInfoWidget_C::BndEvt__InfoButton_K2Node_ComponentBoundEvent_501_OnBu
 	static auto fn = UObject::FindObject<UFunction>("Function ServerInfoWidget.ServerInfoWidget_C.BndEvt__InfoButton_K2Node_ComponentBoundEvent_501_OnButtonHoverEvent__DelegateSignature");
 
 	UServerInfoWidget_C_BndEvt__InfoButton_K2Node_ComponentBoundEvent_501_OnButtonHoverEvent__DelegateSignature_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function ServerInfoWidget.ServerInfoWidget_C.Construct
-// (BlueprintCosmetic, Event, Public, BlueprintEvent)
-
-void UServerInfoWidget_C::Construct()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function ServerInfoWidget.ServerInfoWidget_C.Construct");
-
-	UServerInfoWidget_C_Construct_Params params;
 
 	auto flags = fn->FunctionFlags;
 

@@ -1,4 +1,4 @@
-// ZeroCaliber (0.3.0 DEMO) SDK
+// ZeroCaliber (0.6.0 EA) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -11,6 +11,74 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Functions
 //---------------------------------------------------------------------------
+
+// Function WeaponBase.WeaponBase_C.CheckAttachmnetInOtherHand
+// (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class UGripMotionControllerComponent* GrippingController             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+// bool                           Bool                           (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+// class AAttachableStaticMeshActorBase_C* Attachment                     (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+
+void AWeaponBase_C::CheckAttachmnetInOtherHand(class UGripMotionControllerComponent* GrippingController, bool* Bool, class AAttachableStaticMeshActorBase_C** Attachment)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function WeaponBase.WeaponBase_C.CheckAttachmnetInOtherHand");
+
+	AWeaponBase_C_CheckAttachmnetInOtherHand_Params params;
+	params.GrippingController = GrippingController;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	if (Bool != nullptr)
+		*Bool = params.Bool;
+	if (Attachment != nullptr)
+		*Attachment = params.Attachment;
+}
+
+
+// Function WeaponBase.WeaponBase_C.TurnOnAttachmentIndicator
+// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// TEnumAsByte<EAttachmentCategory> AttachmentCategory             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool                           TurnOn                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class AAttachableStaticMeshActorBase_C* Attachment                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+
+void AWeaponBase_C::TurnOnAttachmentIndicator(TEnumAsByte<EAttachmentCategory> AttachmentCategory, bool TurnOn, class AAttachableStaticMeshActorBase_C* Attachment)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function WeaponBase.WeaponBase_C.TurnOnAttachmentIndicator");
+
+	AWeaponBase_C_TurnOnAttachmentIndicator_Params params;
+	params.AttachmentCategory = AttachmentCategory;
+	params.TurnOn = TurnOn;
+	params.Attachment = Attachment;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function WeaponBase.WeaponBase_C.OnRep_SecondaryGripAsPrimary
+// (BlueprintCallable, BlueprintEvent)
+
+void AWeaponBase_C::OnRep_SecondaryGripAsPrimary()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function WeaponBase.WeaponBase_C.OnRep_SecondaryGripAsPrimary");
+
+	AWeaponBase_C_OnRep_SecondaryGripAsPrimary_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function WeaponBase.WeaponBase_C.AttachmentAttachTransforms
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
@@ -624,8 +692,9 @@ void AWeaponBase_C::GetAdditionalRecoil(bool OneHanded, float* RecoilBack, float
 // TEnumAsByte<EAttachmentCategory> AttachmentCategory             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 // bool                           Attachable                     (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 // class AAttachableStaticMeshActorBase_C* AttachableAttachment           (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+// bool                           IsIndicatorShown               (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 
-void AWeaponBase_C::AttachmentAttachCheck(class AAttachableStaticMeshActorBase_C* Attachment, class AActor* NewAttachment, TEnumAsByte<EAttachmentCategory> AttachmentCategory, bool* Attachable, class AAttachableStaticMeshActorBase_C** AttachableAttachment)
+void AWeaponBase_C::AttachmentAttachCheck(class AAttachableStaticMeshActorBase_C* Attachment, class AActor* NewAttachment, TEnumAsByte<EAttachmentCategory> AttachmentCategory, bool* Attachable, class AAttachableStaticMeshActorBase_C** AttachableAttachment, bool* IsIndicatorShown)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function WeaponBase.WeaponBase_C.AttachmentAttachCheck");
 
@@ -644,6 +713,8 @@ void AWeaponBase_C::AttachmentAttachCheck(class AAttachableStaticMeshActorBase_C
 		*Attachable = params.Attachable;
 	if (AttachableAttachment != nullptr)
 		*AttachableAttachment = params.AttachableAttachment;
+	if (IsIndicatorShown != nullptr)
+		*IsIndicatorShown = params.IsIndicatorShown;
 }
 
 

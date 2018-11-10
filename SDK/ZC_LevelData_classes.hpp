@@ -1,6 +1,6 @@
 #pragma once
 
-// ZeroCaliber (0.3.0 DEMO) SDK
+// ZeroCaliber (0.6.0 EA) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -13,7 +13,7 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // BlueprintGeneratedClass LevelData.LevelData_C
-// 0x0029 (0x0351 - 0x0328)
+// 0x002C (0x0354 - 0x0328)
 class ALevelData_C : public AActor
 {
 public:
@@ -24,6 +24,9 @@ public:
 	unsigned char                                      UnknownData00[0x6];                                       // 0x033A(0x0006) MISSED OFFSET
 	struct FScriptMulticastDelegate                    Initialized;                                              // 0x0340(0x0010) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable)
 	bool                                               IsInitialized;                                            // 0x0350(0x0001) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	bool                                               PrevHasInputFocus;                                        // 0x0351(0x0001) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	bool                                               FriendlyFire;                                             // 0x0352(0x0001) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	TEnumAsByte<EDifficulty>                           Difficulty;                                               // 0x0353(0x0001) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
 
 	static UClass* StaticClass()
 	{
@@ -32,6 +35,7 @@ public:
 	}
 
 
+	void HandleOculusFocusState();
 	void UserConstructionScript();
 	void ReceiveBeginPlay();
 	void ExecuteUbergraph_LevelData(int EntryPoint);

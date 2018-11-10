@@ -1,6 +1,6 @@
 #pragma once
 
-// ZeroCaliber (0.3.0 DEMO) SDK
+// ZeroCaliber (0.6.0 EA) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -32,18 +32,18 @@ struct ASteam_VR_Player_Controller_C_UserConstructionScript_Params
 {
 };
 
+// Function Steam_VR_Player_Controller.Steam_VR_Player_Controller_C.InitHMD
+struct ASteam_VR_Player_Controller_C_InitHMD_Params
+{
+	bool                                               bHasHMD;                                                  // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+};
+
 // Function Steam_VR_Player_Controller.Steam_VR_Player_Controller_C.ReturnHMDStatus
 struct ASteam_VR_Player_Controller_C_ReturnHMDStatus_Params
 {
 	bool                                               bHMDEnabled;                                              // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 	struct FVector                                     HMDOffset;                                                // (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData)
 	struct FRotator                                    HMDRotation;                                              // (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData)
-};
-
-// Function Steam_VR_Player_Controller.Steam_VR_Player_Controller_C.InitHMD
-struct ASteam_VR_Player_Controller_C_InitHMD_Params
-{
-	bool                                               bHasHMD;                                                  // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function Steam_VR_Player_Controller.Steam_VR_Player_Controller_C.ReceiveBeginPlay

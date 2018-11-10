@@ -1,6 +1,6 @@
 #pragma once
 
-// ZeroCaliber (0.3.0 DEMO) SDK
+// ZeroCaliber (0.6.0 EA) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -13,15 +13,15 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // BlueprintGeneratedClass PlayerPawnCharacterFPS.PlayerPawnCharacterFPS_C
-// 0x0078 (0x10CC - 0x1054)
+// 0x0075 (0x10DC - 0x1067)
 class APlayerPawnCharacterFPS_C : public APlayerPawnCharacter_C
 {
 public:
-	unsigned char                                      UnknownData00[0x4];                                       // 0x1054(0x0004) MISSED OFFSET
-	struct FPointerToUberGraphFrame                    UberGraphFrame;                                           // 0x1058(0x0008) (Transient, DuplicateTransient)
-	struct FTransform                                  LeftHandRelativeTransform;                                // 0x1060(0x0030) (Edit, BlueprintVisible, DisableEditOnInstance, IsPlainOldData)
-	struct FTransform                                  RightHandRelativeTransform;                               // 0x1090(0x0030) (Edit, BlueprintVisible, DisableEditOnInstance, IsPlainOldData)
-	struct FVector                                     VrReplicatedCameraRelativeLocation;                       // 0x10C0(0x000C) (Edit, BlueprintVisible, DisableEditOnInstance, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x1];                                       // 0x1067(0x0001) MISSED OFFSET
+	struct FPointerToUberGraphFrame                    UberGraphFrame;                                           // 0x1068(0x0008) (Transient, DuplicateTransient)
+	struct FTransform                                  LeftHandRelativeTransform;                                // 0x1070(0x0030) (Edit, BlueprintVisible, DisableEditOnInstance, IsPlainOldData)
+	struct FTransform                                  RightHandRelativeTransform;                               // 0x10A0(0x0030) (Edit, BlueprintVisible, DisableEditOnInstance, IsPlainOldData)
+	struct FVector                                     VrReplicatedCameraRelativeLocation;                       // 0x10D0(0x000C) (Edit, BlueprintVisible, DisableEditOnInstance, IsPlainOldData)
 
 	static UClass* StaticClass()
 	{

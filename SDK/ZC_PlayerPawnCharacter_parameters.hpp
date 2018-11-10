@@ -1,6 +1,6 @@
 #pragma once
 
-// ZeroCaliber (0.3.0 DEMO) SDK
+// ZeroCaliber (0.6.0 EA) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -66,6 +66,22 @@ struct APlayerPawnCharacter_C_GetTargetData_Params
 struct APlayerPawnCharacter_C_GetTargetLocation_Params
 {
 	struct FVector                                     TargetLocation;                                           // (Parm, OutParm, IsPlainOldData)
+};
+
+// Function PlayerPawnCharacter.PlayerPawnCharacter_C.ResetVelocityScaler
+struct APlayerPawnCharacter_C_ResetVelocityScaler_Params
+{
+};
+
+// Function PlayerPawnCharacter.PlayerPawnCharacter_C.ForcePullEndCheck
+struct APlayerPawnCharacter_C_ForcePullEndCheck_Params
+{
+	class AActor*                                      Actor;                                                    // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class AGrippableStaticMeshActorBase_C*             ForcePullActor;                                           // (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData)
+	class USphereComponent*                            GrabSphere;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+	class UObject*                                     NearestObjectToHand;                                      // (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData)
+	class UGripMotionControllerComponent*              CallingMotionController;                                  // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+	class UGripMotionControllerComponent*              OtherController;                                          // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 };
 
 // Function PlayerPawnCharacter.PlayerPawnCharacter_C.SetHandsEnabled
@@ -459,8 +475,8 @@ struct APlayerPawnCharacter_C_GetGrippedWeaponWithController_Params
 	class AWeaponBase_C*                               GrippedWeapon;                                            // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 };
 
-// Function PlayerPawnCharacter.PlayerPawnCharacter_C.Die
-struct APlayerPawnCharacter_C_Die_Params
+// Function PlayerPawnCharacter.PlayerPawnCharacter_C.DieLocal
+struct APlayerPawnCharacter_C_DieLocal_Params
 {
 };
 
@@ -574,104 +590,92 @@ struct APlayerPawnCharacter_C_HandGlowLeft__UpdateFunc_Params
 {
 };
 
-// Function PlayerPawnCharacter.PlayerPawnCharacter_C.InpActEvt_MenuLeft_K2Node_InputActionEvent_17
-struct APlayerPawnCharacter_C_InpActEvt_MenuLeft_K2Node_InputActionEvent_17_Params
+// Function PlayerPawnCharacter.PlayerPawnCharacter_C.InpActEvt_MenuLeft_K2Node_InputActionEvent_15
+struct APlayerPawnCharacter_C_InpActEvt_MenuLeft_K2Node_InputActionEvent_15_Params
 {
 	struct FKey                                        Key;                                                      // (BlueprintVisible, BlueprintReadOnly, Parm)
 };
 
-// Function PlayerPawnCharacter.PlayerPawnCharacter_C.InpActEvt_MenuRight_K2Node_InputActionEvent_16
-struct APlayerPawnCharacter_C_InpActEvt_MenuRight_K2Node_InputActionEvent_16_Params
+// Function PlayerPawnCharacter.PlayerPawnCharacter_C.InpActEvt_MenuRight_K2Node_InputActionEvent_14
+struct APlayerPawnCharacter_C_InpActEvt_MenuRight_K2Node_InputActionEvent_14_Params
 {
 	struct FKey                                        Key;                                                      // (BlueprintVisible, BlueprintReadOnly, Parm)
 };
 
-// Function PlayerPawnCharacter.PlayerPawnCharacter_C.InpActEvt_GripLeft_K2Node_InputActionEvent_15
-struct APlayerPawnCharacter_C_InpActEvt_GripLeft_K2Node_InputActionEvent_15_Params
+// Function PlayerPawnCharacter.PlayerPawnCharacter_C.InpActEvt_GripLeft_K2Node_InputActionEvent_13
+struct APlayerPawnCharacter_C_InpActEvt_GripLeft_K2Node_InputActionEvent_13_Params
 {
 	struct FKey                                        Key;                                                      // (BlueprintVisible, BlueprintReadOnly, Parm)
 };
 
-// Function PlayerPawnCharacter.PlayerPawnCharacter_C.InpActEvt_GripLeft_K2Node_InputActionEvent_14
-struct APlayerPawnCharacter_C_InpActEvt_GripLeft_K2Node_InputActionEvent_14_Params
+// Function PlayerPawnCharacter.PlayerPawnCharacter_C.InpActEvt_GripLeft_K2Node_InputActionEvent_12
+struct APlayerPawnCharacter_C_InpActEvt_GripLeft_K2Node_InputActionEvent_12_Params
 {
 	struct FKey                                        Key;                                                      // (BlueprintVisible, BlueprintReadOnly, Parm)
 };
 
-// Function PlayerPawnCharacter.PlayerPawnCharacter_C.InpActEvt_GripRight_K2Node_InputActionEvent_13
-struct APlayerPawnCharacter_C_InpActEvt_GripRight_K2Node_InputActionEvent_13_Params
+// Function PlayerPawnCharacter.PlayerPawnCharacter_C.InpActEvt_GripRight_K2Node_InputActionEvent_11
+struct APlayerPawnCharacter_C_InpActEvt_GripRight_K2Node_InputActionEvent_11_Params
 {
 	struct FKey                                        Key;                                                      // (BlueprintVisible, BlueprintReadOnly, Parm)
 };
 
-// Function PlayerPawnCharacter.PlayerPawnCharacter_C.InpActEvt_GripRight_K2Node_InputActionEvent_12
-struct APlayerPawnCharacter_C_InpActEvt_GripRight_K2Node_InputActionEvent_12_Params
+// Function PlayerPawnCharacter.PlayerPawnCharacter_C.InpActEvt_GripRight_K2Node_InputActionEvent_10
+struct APlayerPawnCharacter_C_InpActEvt_GripRight_K2Node_InputActionEvent_10_Params
 {
 	struct FKey                                        Key;                                                      // (BlueprintVisible, BlueprintReadOnly, Parm)
 };
 
-// Function PlayerPawnCharacter.PlayerPawnCharacter_C.InpActEvt_TriggerLeft_K2Node_InputActionEvent_11
-struct APlayerPawnCharacter_C_InpActEvt_TriggerLeft_K2Node_InputActionEvent_11_Params
+// Function PlayerPawnCharacter.PlayerPawnCharacter_C.InpActEvt_TriggerLeft_K2Node_InputActionEvent_9
+struct APlayerPawnCharacter_C_InpActEvt_TriggerLeft_K2Node_InputActionEvent_9_Params
 {
 	struct FKey                                        Key;                                                      // (BlueprintVisible, BlueprintReadOnly, Parm)
 };
 
-// Function PlayerPawnCharacter.PlayerPawnCharacter_C.InpActEvt_TriggerLeft_K2Node_InputActionEvent_10
-struct APlayerPawnCharacter_C_InpActEvt_TriggerLeft_K2Node_InputActionEvent_10_Params
+// Function PlayerPawnCharacter.PlayerPawnCharacter_C.InpActEvt_TriggerLeft_K2Node_InputActionEvent_8
+struct APlayerPawnCharacter_C_InpActEvt_TriggerLeft_K2Node_InputActionEvent_8_Params
 {
 	struct FKey                                        Key;                                                      // (BlueprintVisible, BlueprintReadOnly, Parm)
 };
 
-// Function PlayerPawnCharacter.PlayerPawnCharacter_C.InpActEvt_TriggerRight_K2Node_InputActionEvent_9
-struct APlayerPawnCharacter_C_InpActEvt_TriggerRight_K2Node_InputActionEvent_9_Params
+// Function PlayerPawnCharacter.PlayerPawnCharacter_C.InpActEvt_TriggerRight_K2Node_InputActionEvent_7
+struct APlayerPawnCharacter_C_InpActEvt_TriggerRight_K2Node_InputActionEvent_7_Params
 {
 	struct FKey                                        Key;                                                      // (BlueprintVisible, BlueprintReadOnly, Parm)
 };
 
-// Function PlayerPawnCharacter.PlayerPawnCharacter_C.InpActEvt_TriggerRight_K2Node_InputActionEvent_8
-struct APlayerPawnCharacter_C_InpActEvt_TriggerRight_K2Node_InputActionEvent_8_Params
+// Function PlayerPawnCharacter.PlayerPawnCharacter_C.InpActEvt_TriggerRight_K2Node_InputActionEvent_6
+struct APlayerPawnCharacter_C_InpActEvt_TriggerRight_K2Node_InputActionEvent_6_Params
 {
 	struct FKey                                        Key;                                                      // (BlueprintVisible, BlueprintReadOnly, Parm)
 };
 
-// Function PlayerPawnCharacter.PlayerPawnCharacter_C.InpActEvt_Skill_AttachmentRelease_K2Node_InputActionEvent_7
-struct APlayerPawnCharacter_C_InpActEvt_Skill_AttachmentRelease_K2Node_InputActionEvent_7_Params
+// Function PlayerPawnCharacter.PlayerPawnCharacter_C.InpActEvt_Skill_AttachmentRelease_K2Node_InputActionEvent_5
+struct APlayerPawnCharacter_C_InpActEvt_Skill_AttachmentRelease_K2Node_InputActionEvent_5_Params
 {
 	struct FKey                                        Key;                                                      // (BlueprintVisible, BlueprintReadOnly, Parm)
 };
 
-// Function PlayerPawnCharacter.PlayerPawnCharacter_C.InpActEvt_Skill_AttachmentRelease_K2Node_InputActionEvent_6
-struct APlayerPawnCharacter_C_InpActEvt_Skill_AttachmentRelease_K2Node_InputActionEvent_6_Params
+// Function PlayerPawnCharacter.PlayerPawnCharacter_C.InpActEvt_Skill_AttachmentRelease_K2Node_InputActionEvent_4
+struct APlayerPawnCharacter_C_InpActEvt_Skill_AttachmentRelease_K2Node_InputActionEvent_4_Params
 {
 	struct FKey                                        Key;                                                      // (BlueprintVisible, BlueprintReadOnly, Parm)
 };
 
-// Function PlayerPawnCharacter.PlayerPawnCharacter_C.InpActEvt_Skill_FireModeChange_K2Node_InputActionEvent_5
-struct APlayerPawnCharacter_C_InpActEvt_Skill_FireModeChange_K2Node_InputActionEvent_5_Params
+// Function PlayerPawnCharacter.PlayerPawnCharacter_C.InpActEvt_Skill_FireModeChange_K2Node_InputActionEvent_3
+struct APlayerPawnCharacter_C_InpActEvt_Skill_FireModeChange_K2Node_InputActionEvent_3_Params
 {
 	struct FKey                                        Key;                                                      // (BlueprintVisible, BlueprintReadOnly, Parm)
 };
 
-// Function PlayerPawnCharacter.PlayerPawnCharacter_C.InpActEvt_Skill_ReleaseMagazine_K2Node_InputActionEvent_4
-struct APlayerPawnCharacter_C_InpActEvt_Skill_ReleaseMagazine_K2Node_InputActionEvent_4_Params
+// Function PlayerPawnCharacter.PlayerPawnCharacter_C.InpActEvt_Skill_ReleaseMagazine_K2Node_InputActionEvent_2
+struct APlayerPawnCharacter_C_InpActEvt_Skill_ReleaseMagazine_K2Node_InputActionEvent_2_Params
 {
 	struct FKey                                        Key;                                                      // (BlueprintVisible, BlueprintReadOnly, Parm)
 };
 
-// Function PlayerPawnCharacter.PlayerPawnCharacter_C.InpActEvt_Skill_ReleaseSlider_K2Node_InputActionEvent_3
-struct APlayerPawnCharacter_C_InpActEvt_Skill_ReleaseSlider_K2Node_InputActionEvent_3_Params
-{
-	struct FKey                                        Key;                                                      // (BlueprintVisible, BlueprintReadOnly, Parm)
-};
-
-// Function PlayerPawnCharacter.PlayerPawnCharacter_C.InpActEvt_Run_K2Node_InputActionEvent_2
-struct APlayerPawnCharacter_C_InpActEvt_Run_K2Node_InputActionEvent_2_Params
-{
-	struct FKey                                        Key;                                                      // (BlueprintVisible, BlueprintReadOnly, Parm)
-};
-
-// Function PlayerPawnCharacter.PlayerPawnCharacter_C.InpActEvt_Run_K2Node_InputActionEvent_1
-struct APlayerPawnCharacter_C_InpActEvt_Run_K2Node_InputActionEvent_1_Params
+// Function PlayerPawnCharacter.PlayerPawnCharacter_C.InpActEvt_Skill_ReleaseSlider_K2Node_InputActionEvent_1
+struct APlayerPawnCharacter_C_InpActEvt_Skill_ReleaseSlider_K2Node_InputActionEvent_1_Params
 {
 	struct FKey                                        Key;                                                      // (BlueprintVisible, BlueprintReadOnly, Parm)
 };
@@ -862,16 +866,6 @@ struct APlayerPawnCharacter_C_TryDropSingleAfterMulti_Params
 {
 	class UGripMotionControllerComponent*              Controller;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 	class UObject*                                     ObjectToDrop;                                             // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function PlayerPawnCharacter.PlayerPawnCharacter_C.DieServer
-struct APlayerPawnCharacter_C_DieServer_Params
-{
-};
-
-// Function PlayerPawnCharacter.PlayerPawnCharacter_C.DieMulti
-struct APlayerPawnCharacter_C_DieMulti_Params
-{
 };
 
 // Function PlayerPawnCharacter.PlayerPawnCharacter_C.Revive
@@ -1360,6 +1354,78 @@ struct APlayerPawnCharacter_C_GripOrDropAllTags_Params
 	class UGripMotionControllerComponent*              OtherHand;                                                // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 	bool                                               IsGrip;                                                   // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 	class UPrimitiveComponent*                         GrabSphere;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+};
+
+// Function PlayerPawnCharacter.PlayerPawnCharacter_C.SetSecondaryGripAsPrimaryServer
+struct APlayerPawnCharacter_C_SetSecondaryGripAsPrimaryServer_Params
+{
+	class AWeaponBase_C*                               Target;                                                   // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function PlayerPawnCharacter.PlayerPawnCharacter_C.LevelDataInitialized
+struct APlayerPawnCharacter_C_LevelDataInitialized_Params
+{
+	class ALevelData_C*                                LevelData;                                                // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function PlayerPawnCharacter.PlayerPawnCharacter_C.BndEvt__EarLeftCollision_K2Node_ComponentBoundEvent_2_ComponentBeginOverlapSignature__DelegateSignature
+struct APlayerPawnCharacter_C_BndEvt__EarLeftCollision_K2Node_ComponentBoundEvent_2_ComponentBeginOverlapSignature__DelegateSignature_Params
+{
+	class UPrimitiveComponent*                         OverlappedComponent;                                      // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+	class AActor*                                      OtherActor;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class UPrimitiveComponent*                         OtherComp;                                                // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+	int                                                OtherBodyIndex;                                           // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               bFromSweep;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	struct FHitResult                                  SweepResult;                                              // (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, IsPlainOldData)
+};
+
+// Function PlayerPawnCharacter.PlayerPawnCharacter_C.BndEvt__EarRightCollision_K2Node_ComponentBoundEvent_5_ComponentBeginOverlapSignature__DelegateSignature
+struct APlayerPawnCharacter_C_BndEvt__EarRightCollision_K2Node_ComponentBoundEvent_5_ComponentBeginOverlapSignature__DelegateSignature_Params
+{
+	class UPrimitiveComponent*                         OverlappedComponent;                                      // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+	class AActor*                                      OtherActor;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class UPrimitiveComponent*                         OtherComp;                                                // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+	int                                                OtherBodyIndex;                                           // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               bFromSweep;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	struct FHitResult                                  SweepResult;                                              // (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, IsPlainOldData)
+};
+
+// Function PlayerPawnCharacter.PlayerPawnCharacter_C.StartVoiceChat
+struct APlayerPawnCharacter_C_StartVoiceChat_Params
+{
+};
+
+// Function PlayerPawnCharacter.PlayerPawnCharacter_C.StopVoiceChat
+struct APlayerPawnCharacter_C_StopVoiceChat_Params
+{
+};
+
+// Function PlayerPawnCharacter.PlayerPawnCharacter_C.BndEvt__EarLeftCollision_K2Node_ComponentBoundEvent_3_ComponentEndOverlapSignature__DelegateSignature
+struct APlayerPawnCharacter_C_BndEvt__EarLeftCollision_K2Node_ComponentBoundEvent_3_ComponentEndOverlapSignature__DelegateSignature_Params
+{
+	class UPrimitiveComponent*                         OverlappedComponent;                                      // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+	class AActor*                                      OtherActor;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class UPrimitiveComponent*                         OtherComp;                                                // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+	int                                                OtherBodyIndex;                                           // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function PlayerPawnCharacter.PlayerPawnCharacter_C.BndEvt__EarRightCollision_K2Node_ComponentBoundEvent_6_ComponentEndOverlapSignature__DelegateSignature
+struct APlayerPawnCharacter_C_BndEvt__EarRightCollision_K2Node_ComponentBoundEvent_6_ComponentEndOverlapSignature__DelegateSignature_Params
+{
+	class UPrimitiveComponent*                         OverlappedComponent;                                      // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+	class AActor*                                      OtherActor;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class UPrimitiveComponent*                         OtherComp;                                                // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+	int                                                OtherBodyIndex;                                           // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function PlayerPawnCharacter.PlayerPawnCharacter_C.TriggerRightVoiceChatEvent
+struct APlayerPawnCharacter_C_TriggerRightVoiceChatEvent_Params
+{
+};
+
+// Function PlayerPawnCharacter.PlayerPawnCharacter_C.TriggerLeftVoiceChatEvent
+struct APlayerPawnCharacter_C_TriggerLeftVoiceChatEvent_Params
+{
 };
 
 // Function PlayerPawnCharacter.PlayerPawnCharacter_C.ExecuteUbergraph_PlayerPawnCharacter

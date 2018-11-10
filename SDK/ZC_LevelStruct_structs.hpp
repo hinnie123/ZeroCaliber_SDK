@@ -1,6 +1,6 @@
 #pragma once
 
-// ZeroCaliber (0.3.0 DEMO) SDK
+// ZeroCaliber (0.6.0 EA) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -13,7 +13,7 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // UserDefinedStruct LevelStruct.LevelStruct
-// 0x0050
+// 0x0058
 struct FLevelStruct
 {
 	TEnumAsByte<ELevelType>                            LevelType_11_C4BB4267417B1532B1C8AB86AC0BD184;            // 0x0000(0x0001) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
@@ -24,6 +24,7 @@ struct FLevelStruct
 	class UTexture*                                    Image_21_42A211AB48F3CAAB1611849E39C90704;                // 0x0028(0x0008) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
 	struct FText                                       Description_20_34B9003940A8FE805B194BBC9DC371B3;          // 0x0030(0x0018) (Edit, BlueprintVisible)
 	class UTexture*                                    LockedImage_24_6D4BB1A740DB57B16CF09F917F5CEA09;          // 0x0048(0x0008) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
+	class UTexture*                                    CompletedImage_30_04A8BE4E4E6D225EBF8D76A639BDF77E;       // 0x0050(0x0008) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
 };
 
 }

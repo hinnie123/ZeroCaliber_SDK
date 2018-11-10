@@ -1,4 +1,4 @@
-// ZeroCaliber (0.3.0 DEMO) SDK
+// ZeroCaliber (0.6.0 EA) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -192,12 +192,15 @@ void AEnemyCharacterBase_C::OnRep_PrimaryWeapon()
 
 // Function EnemyCharacterBase.EnemyCharacterBase_C.DifficultySetting
 // (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class ALevelData_C*            LevelData                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 
-void AEnemyCharacterBase_C::DifficultySetting()
+void AEnemyCharacterBase_C::DifficultySetting(class ALevelData_C* LevelData)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function EnemyCharacterBase.EnemyCharacterBase_C.DifficultySetting");
 
 	AEnemyCharacterBase_C_DifficultySetting_Params params;
+	params.LevelData = LevelData;
 
 	auto flags = fn->FunctionFlags;
 
@@ -836,6 +839,26 @@ void AEnemyCharacterBase_C::ReceiveEndPlay(TEnumAsByte<EEndPlayReason>* EndPlayR
 
 	AEnemyCharacterBase_C_ReceiveEndPlay_Params params;
 	params.EndPlayReason = EndPlayReason;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function EnemyCharacterBase.EnemyCharacterBase_C.LevelDataInitialized
+// (BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class ALevelData_C*            LevelData                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+
+void AEnemyCharacterBase_C::LevelDataInitialized(class ALevelData_C* LevelData)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function EnemyCharacterBase.EnemyCharacterBase_C.LevelDataInitialized");
+
+	AEnemyCharacterBase_C_LevelDataInitialized_Params params;
+	params.LevelData = LevelData;
 
 	auto flags = fn->FunctionFlags;
 

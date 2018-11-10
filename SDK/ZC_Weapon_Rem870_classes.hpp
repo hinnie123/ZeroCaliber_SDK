@@ -1,6 +1,6 @@
 #pragma once
 
-// ZeroCaliber (0.3.0 DEMO) SDK
+// ZeroCaliber (0.6.0 EA) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -13,7 +13,7 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // BlueprintGeneratedClass Weapon_Rem870.Weapon_Rem870_C
-// 0x0000 (0x0EA4 - 0x0EA4)
+// 0x0000 (0x0EB4 - 0x0EB4)
 class AWeapon_Rem870_C : public AWeaponShotgunBase_C
 {
 public:

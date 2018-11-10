@@ -1,6 +1,6 @@
 #pragma once
 
-// ZeroCaliber (0.3.0 DEMO) SDK
+// ZeroCaliber (0.6.0 EA) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -13,7 +13,7 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // BlueprintGeneratedClass PlayerEquipmentLoader.PlayerEquipmentLoader_C
-// 0x001C (0x0344 - 0x0328)
+// 0x01B8 (0x04E0 - 0x0328)
 class APlayerEquipmentLoader_C : public AActor
 {
 public:
@@ -21,6 +21,8 @@ public:
 	class USceneComponent*                             DefaultSceneRoot;                                         // 0x0330(0x0008) (BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData)
 	class APlayerPawnCharacter_C*                      PlayerPawn;                                               // 0x0338(0x0008) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, IsPlainOldData)
 	float                                              SpawnDelay;                                               // 0x0340(0x0004) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	unsigned char                                      UnknownData00[0xC];                                       // 0x0344(0x000C) MISSED OFFSET
+	struct FPlayerEquipmentStruct                      PlayerEquipmentStruct;                                    // 0x0350(0x0190) (Edit, BlueprintVisible, DisableEditOnInstance)
 
 	static UClass* StaticClass()
 	{

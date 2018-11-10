@@ -1,6 +1,6 @@
 #pragma once
 
-// ZeroCaliber (0.3.0 DEMO) SDK
+// ZeroCaliber (0.6.0 EA) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -70,6 +70,7 @@ public:
 	void BndEvt__ButtonMenu_K2Node_ComponentBoundEvent_1_OnButtonPressedEvent__DelegateSignature();
 	void BndEvt__ButtonNextLevel_K2Node_ComponentBoundEvent_19_OnButtonReleasedEvent__DelegateSignature();
 	void Initialize(class AActivatableLevelCompleted_C* LevelCompleted);
+	void DisableButtons(bool IsDiable);
 	void ExecuteUbergraph_LevelCompleted(int EntryPoint);
 	void ButtonNextLevelReleased__DelegateSignature();
 	void ButtonMenuReleased__DelegateSignature();

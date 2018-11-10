@@ -1,6 +1,6 @@
 #pragma once
 
-// ZeroCaliber (0.3.0 DEMO) SDK
+// ZeroCaliber (0.6.0 EA) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -13,6 +13,15 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Parameters
 //---------------------------------------------------------------------------
+
+// Function AttachableStaticMeshActorBase.AttachableStaticMeshActorBase_C.IsOtherHandHoldingWeapon
+struct AAttachableStaticMeshActorBase_C_IsOtherHandHoldingWeapon_Params
+{
+	class UGripMotionControllerComponent*              Controller;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+	class UGripMotionControllerComponent*              OtherController;                                          // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+	bool                                               Bool;                                                     // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+	class AWeaponBase_C*                               Weapon;                                                   // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+};
 
 // Function AttachableStaticMeshActorBase.AttachableStaticMeshActorBase_C.ModifyCollisionWhenBlocked
 struct AAttachableStaticMeshActorBase_C_ModifyCollisionWhenBlocked_Params
@@ -86,6 +95,14 @@ struct AAttachableStaticMeshActorBase_C_ActivateWhenWeaponGripped_Params
 struct AAttachableStaticMeshActorBase_C_AttachSound_Params
 {
 	float                                              ReloadType;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function AttachableStaticMeshActorBase.AttachableStaticMeshActorBase_C.OnGripRelease
+struct AAttachableStaticMeshActorBase_C_OnGripRelease_Params
+{
+	class UGripMotionControllerComponent**             ReleasingController;                                      // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+	struct FBPActorGripInformation*                    GripInformation;                                          // (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+	bool*                                              bWasSocketed;                                             // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function AttachableStaticMeshActorBase.AttachableStaticMeshActorBase_C.ExecuteUbergraph_AttachableStaticMeshActorBase

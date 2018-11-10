@@ -1,6 +1,6 @@
 #pragma once
 
-// ZeroCaliber (0.3.0 DEMO) SDK
+// ZeroCaliber (0.6.0 EA) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -36,9 +36,10 @@ public:
 
 
 	void UserConstructionScript();
-	void OnGripRelease(class UGripMotionControllerComponent** ReleasingController, struct FBPActorGripInformation* GripInformation, bool* bWasSocketed);
 	void OnChildGrip(class UGripMotionControllerComponent** GrippingController, struct FBPActorGripInformation* GripInformation);
+	void OnGripRelease(class UGripMotionControllerComponent** ReleasingController, struct FBPActorGripInformation* GripInformation, bool* bWasSocketed);
 	void SetCollisionResponse(TEnumAsByte<ECollisionResponse>* NewResponse);
+	void Hover(TEnumAsByte<EHoverEnum>* InteractType, class USceneComponent** Component);
 	void ExecuteUbergraph_GrenadeBase(int EntryPoint);
 };
 

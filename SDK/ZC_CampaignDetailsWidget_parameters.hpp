@@ -1,6 +1,6 @@
 #pragma once
 
-// ZeroCaliber (0.3.0 DEMO) SDK
+// ZeroCaliber (0.6.0 EA) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -13,6 +13,12 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Parameters
 //---------------------------------------------------------------------------
+
+// Function CampaignDetailsWidget.CampaignDetailsWidget_C.FindCurrentLevelIndex
+struct UCampaignDetailsWidget_C_FindCurrentLevelIndex_Params
+{
+	int                                                Index;                                                    // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+};
 
 // Function CampaignDetailsWidget.CampaignDetailsWidget_C.IsLevelLocked
 struct UCampaignDetailsWidget_C_IsLevelLocked_Params
@@ -33,39 +39,6 @@ struct UCampaignDetailsWidget_C_TurnOnVisibility_Params
 	bool                                               TurnOn;                                                   // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 };
 
-// Function CampaignDetailsWidget.CampaignDetailsWidget_C.Construct
-struct UCampaignDetailsWidget_C_Construct_Params
-{
-};
-
-// Function CampaignDetailsWidget.CampaignDetailsWidget_C.BndEvt__StartLevelButton_K2Node_ComponentBoundEvent_87_OnButtonReleasedEvent__DelegateSignature
-struct UCampaignDetailsWidget_C_BndEvt__StartLevelButton_K2Node_ComponentBoundEvent_87_OnButtonReleasedEvent__DelegateSignature_Params
-{
-};
-
-// Function CampaignDetailsWidget.CampaignDetailsWidget_C.BndEvt__BackButton_K2Node_ComponentBoundEvent_104_OnButtonReleasedEvent__DelegateSignature
-struct UCampaignDetailsWidget_C_BndEvt__BackButton_K2Node_ComponentBoundEvent_104_OnButtonReleasedEvent__DelegateSignature_Params
-{
-};
-
-// Function CampaignDetailsWidget.CampaignDetailsWidget_C.UpdateDetails
-struct UCampaignDetailsWidget_C_UpdateDetails_Params
-{
-	struct FLevelLoaderStruct                          LevelLoaderStruct;                                        // (BlueprintVisible, BlueprintReadOnly, Parm)
-	TEnumAsByte<ECampaignStatusEnum>                   CampaignStatus;                                           // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function CampaignDetailsWidget.CampaignDetailsWidget_C.UpdateStatus
-struct UCampaignDetailsWidget_C_UpdateStatus_Params
-{
-};
-
-// Function CampaignDetailsWidget.CampaignDetailsWidget_C.OnCurrentLevel
-struct UCampaignDetailsWidget_C_OnCurrentLevel_Params
-{
-	struct FLevelStruct                                Level;                                                    // (BlueprintVisible, BlueprintReadOnly, Parm)
-};
-
 // Function CampaignDetailsWidget.CampaignDetailsWidget_C.BndEvt__SingleButton_K2Node_ComponentBoundEvent_226_OnButtonReleasedEvent__DelegateSignature
 struct UCampaignDetailsWidget_C_BndEvt__SingleButton_K2Node_ComponentBoundEvent_226_OnButtonReleasedEvent__DelegateSignature_Params
 {
@@ -78,6 +51,39 @@ struct UCampaignDetailsWidget_C_BndEvt__DoubleButtonLeft_K2Node_ComponentBoundEv
 
 // Function CampaignDetailsWidget.CampaignDetailsWidget_C.BndEvt__DoubleButtonRight_K2Node_ComponentBoundEvent_128_OnButtonReleasedEvent__DelegateSignature
 struct UCampaignDetailsWidget_C_BndEvt__DoubleButtonRight_K2Node_ComponentBoundEvent_128_OnButtonReleasedEvent__DelegateSignature_Params
+{
+};
+
+// Function CampaignDetailsWidget.CampaignDetailsWidget_C.OnCurrentLevel
+struct UCampaignDetailsWidget_C_OnCurrentLevel_Params
+{
+	struct FLevelStruct                                Level;                                                    // (BlueprintVisible, BlueprintReadOnly, Parm)
+};
+
+// Function CampaignDetailsWidget.CampaignDetailsWidget_C.UpdateStatus
+struct UCampaignDetailsWidget_C_UpdateStatus_Params
+{
+};
+
+// Function CampaignDetailsWidget.CampaignDetailsWidget_C.UpdateDetails
+struct UCampaignDetailsWidget_C_UpdateDetails_Params
+{
+	struct FLevelLoaderStruct                          LevelLoaderStruct;                                        // (BlueprintVisible, BlueprintReadOnly, Parm)
+	TEnumAsByte<ECampaignStatusEnum>                   CampaignStatus;                                           // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function CampaignDetailsWidget.CampaignDetailsWidget_C.BndEvt__BackButton_K2Node_ComponentBoundEvent_104_OnButtonReleasedEvent__DelegateSignature
+struct UCampaignDetailsWidget_C_BndEvt__BackButton_K2Node_ComponentBoundEvent_104_OnButtonReleasedEvent__DelegateSignature_Params
+{
+};
+
+// Function CampaignDetailsWidget.CampaignDetailsWidget_C.BndEvt__StartLevelButton_K2Node_ComponentBoundEvent_87_OnButtonReleasedEvent__DelegateSignature
+struct UCampaignDetailsWidget_C_BndEvt__StartLevelButton_K2Node_ComponentBoundEvent_87_OnButtonReleasedEvent__DelegateSignature_Params
+{
+};
+
+// Function CampaignDetailsWidget.CampaignDetailsWidget_C.Construct
+struct UCampaignDetailsWidget_C_Construct_Params
 {
 };
 

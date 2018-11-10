@@ -1,4 +1,4 @@
-// ZeroCaliber (0.3.0 DEMO) SDK
+// ZeroCaliber (0.6.0 EA) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -11,6 +11,57 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Functions
 //---------------------------------------------------------------------------
+
+// Function Weapon_Python.Weapon_Python_C.LoadCartridgeAfterCheckpoint
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void AWeapon_Python_C::LoadCartridgeAfterCheckpoint()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function Weapon_Python.Weapon_Python_C.LoadCartridgeAfterCheckpoint");
+
+	AWeapon_Python_C_LoadCartridgeAfterCheckpoint_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function Weapon_Python.Weapon_Python_C.AttachmentAttachCheck
+// (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class AAttachableStaticMeshActorBase_C** Attachment                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class AActor**                 NewAttachment                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// TEnumAsByte<EAttachmentCategory>* AttachmentCategory             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool                           Attachable                     (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+// class AAttachableStaticMeshActorBase_C* AttachableAttachment           (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+// bool                           IsIndicatorShown               (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+
+void AWeapon_Python_C::AttachmentAttachCheck(class AAttachableStaticMeshActorBase_C** Attachment, class AActor** NewAttachment, TEnumAsByte<EAttachmentCategory>* AttachmentCategory, bool* Attachable, class AAttachableStaticMeshActorBase_C** AttachableAttachment, bool* IsIndicatorShown)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function Weapon_Python.Weapon_Python_C.AttachmentAttachCheck");
+
+	AWeapon_Python_C_AttachmentAttachCheck_Params params;
+	params.Attachment = Attachment;
+	params.NewAttachment = NewAttachment;
+	params.AttachmentCategory = AttachmentCategory;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	if (Attachable != nullptr)
+		*Attachable = params.Attachable;
+	if (AttachableAttachment != nullptr)
+		*AttachableAttachment = params.AttachableAttachment;
+	if (IsIndicatorShown != nullptr)
+		*IsIndicatorShown = params.IsIndicatorShown;
+}
+
 
 // Function Weapon_Python.Weapon_Python_C.MagRolloutAllowed
 // (Public, HasOutParms, HasDefaults, BlueprintCallable, BlueprintEvent, BlueprintPure)
@@ -52,40 +103,6 @@ bool AWeapon_Python_C::MagRollinAllowed()
 	fn->FunctionFlags = flags;
 
 	return params.ReturnValue;
-}
-
-
-// Function Weapon_Python.Weapon_Python_C.ReleaseMagazineByTriggerHand
-// (Public, BlueprintCallable, BlueprintEvent)
-
-void AWeapon_Python_C::ReleaseMagazineByTriggerHand()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function Weapon_Python.Weapon_Python_C.ReleaseMagazineByTriggerHand");
-
-	AWeapon_Python_C_ReleaseMagazineByTriggerHand_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function Weapon_Python.Weapon_Python_C.ReleaseMagazine
-// (Public, BlueprintCallable, BlueprintEvent)
-
-void AWeapon_Python_C::ReleaseMagazine()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function Weapon_Python.Weapon_Python_C.ReleaseMagazine");
-
-	AWeapon_Python_C_ReleaseMagazine_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
 }
 
 
@@ -216,56 +233,6 @@ void AWeapon_Python_C::OnReleaseMagazine()
 	static auto fn = UObject::FindObject<UFunction>("Function Weapon_Python.Weapon_Python_C.OnReleaseMagazine");
 
 	AWeapon_Python_C_OnReleaseMagazine_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function Weapon_Python.Weapon_Python_C.BndEvt__MagazineBox_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature
-// (HasOutParms, BlueprintEvent)
-// Parameters:
-// class UPrimitiveComponent**    OverlappedComponent            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
-// class AActor**                 OtherActor                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// class UPrimitiveComponent**    OtherComp                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
-// int*                           OtherBodyIndex                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// bool*                          bFromSweep                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// struct FHitResult*             SweepResult                    (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, IsPlainOldData)
-
-void AWeapon_Python_C::BndEvt__MagazineBox_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature(class UPrimitiveComponent** OverlappedComponent, class AActor** OtherActor, class UPrimitiveComponent** OtherComp, int* OtherBodyIndex, bool* bFromSweep, struct FHitResult* SweepResult)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function Weapon_Python.Weapon_Python_C.BndEvt__MagazineBox_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature");
-
-	AWeapon_Python_C_BndEvt__MagazineBox_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature_Params params;
-	params.OverlappedComponent = OverlappedComponent;
-	params.OtherActor = OtherActor;
-	params.OtherComp = OtherComp;
-	params.OtherBodyIndex = OtherBodyIndex;
-	params.bFromSweep = bFromSweep;
-	params.SweepResult = SweepResult;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function Weapon_Python.Weapon_Python_C.AttachmentAttach
-// (Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// class AAttachableStaticMeshActorBase_C** Attachment                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-
-void AWeapon_Python_C::AttachmentAttach(class AAttachableStaticMeshActorBase_C** Attachment)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function Weapon_Python.Weapon_Python_C.AttachmentAttach");
-
-	AWeapon_Python_C_AttachmentAttach_Params params;
-	params.Attachment = Attachment;
 
 	auto flags = fn->FunctionFlags;
 
@@ -417,23 +384,6 @@ void AWeapon_Python_C::MagRollout()
 }
 
 
-// Function Weapon_Python.Weapon_Python_C.ReleaseSlider
-// (BlueprintCallable, BlueprintEvent)
-
-void AWeapon_Python_C::ReleaseSlider()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function Weapon_Python.Weapon_Python_C.ReleaseSlider");
-
-	AWeapon_Python_C_ReleaseSlider_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
 // Function Weapon_Python.Weapon_Python_C.MagrollOutEnabled
 // (BlueprintCallable, BlueprintEvent)
 
@@ -459,6 +409,97 @@ void AWeapon_Python_C::MagRollIn()
 	static auto fn = UObject::FindObject<UFunction>("Function Weapon_Python.Weapon_Python_C.MagRollIn");
 
 	AWeapon_Python_C_MagRollIn_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function Weapon_Python.Weapon_Python_C.AttachmentReleaseLocal
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class AAttachmentBase_C**      Attachment                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+
+void AWeapon_Python_C::AttachmentReleaseLocal(class AAttachmentBase_C** Attachment)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function Weapon_Python.Weapon_Python_C.AttachmentReleaseLocal");
+
+	AWeapon_Python_C_AttachmentReleaseLocal_Params params;
+	params.Attachment = Attachment;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function Weapon_Python.Weapon_Python_C.ReleaseMagazine
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void AWeapon_Python_C::ReleaseMagazine()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function Weapon_Python.Weapon_Python_C.ReleaseMagazine");
+
+	AWeapon_Python_C_ReleaseMagazine_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function Weapon_Python.Weapon_Python_C.ReleaseSliderLocal
+// (BlueprintCallable, BlueprintEvent)
+
+void AWeapon_Python_C::ReleaseSliderLocal()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function Weapon_Python.Weapon_Python_C.ReleaseSliderLocal");
+
+	AWeapon_Python_C_ReleaseSliderLocal_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function Weapon_Python.Weapon_Python_C.AttachmentAttachLocal
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class AAttachableStaticMeshActorBase_C** Attachment                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+
+void AWeapon_Python_C::AttachmentAttachLocal(class AAttachableStaticMeshActorBase_C** Attachment)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function Weapon_Python.Weapon_Python_C.AttachmentAttachLocal");
+
+	AWeapon_Python_C_AttachmentAttachLocal_Params params;
+	params.Attachment = Attachment;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function Weapon_Python.Weapon_Python_C.InstantCocking
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void AWeapon_Python_C::InstantCocking()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function Weapon_Python.Weapon_Python_C.InstantCocking");
+
+	AWeapon_Python_C_InstantCocking_Params params;
 
 	auto flags = fn->FunctionFlags;
 

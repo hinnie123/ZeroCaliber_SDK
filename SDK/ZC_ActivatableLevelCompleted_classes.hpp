@@ -1,6 +1,6 @@
 #pragma once
 
-// ZeroCaliber (0.3.0 DEMO) SDK
+// ZeroCaliber (0.6.0 EA) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -13,7 +13,7 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // BlueprintGeneratedClass ActivatableLevelCompleted.ActivatableLevelCompleted_C
-// 0x017F (0x0558 - 0x03D9)
+// 0x018F (0x0568 - 0x03D9)
 class AActivatableLevelCompleted_C : public AActivatableBase_C
 {
 public:
@@ -78,6 +78,8 @@ public:
 	float                                              Distance_From_Widget;                                     // 0x0544(0x0004) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
 	class APlayerEquipmentSaver_C*                     PlayerEquipmentSaver;                                     // 0x0548(0x0008) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, IsPlainOldData)
 	class ALevelData_C*                                LevelData;                                                // 0x0550(0x0008) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, IsPlainOldData)
+	class UDataTable*                                  LevelsDataTable;                                          // 0x0558(0x0008) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
+	class ULevelCompleted_C*                           LevelCompletedWidgetReference;                            // 0x0560(0x0008) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, IsPlainOldData)
 
 	static UClass* StaticClass()
 	{

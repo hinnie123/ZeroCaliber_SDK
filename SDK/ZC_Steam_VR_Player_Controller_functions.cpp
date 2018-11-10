@@ -1,4 +1,4 @@
-// ZeroCaliber (0.3.0 DEMO) SDK
+// ZeroCaliber (0.6.0 EA) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -72,6 +72,26 @@ void ASteam_VR_Player_Controller_C::UserConstructionScript()
 }
 
 
+// Function Steam_VR_Player_Controller.Steam_VR_Player_Controller_C.InitHMD
+// (Net, NetReliable, NetClient, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                           bHasHMD                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+
+void ASteam_VR_Player_Controller_C::InitHMD(bool bHasHMD)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function Steam_VR_Player_Controller.Steam_VR_Player_Controller_C.InitHMD");
+
+	ASteam_VR_Player_Controller_C_InitHMD_Params params;
+	params.bHasHMD = bHasHMD;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
 // Function Steam_VR_Player_Controller.Steam_VR_Player_Controller_C.ReturnHMDStatus
 // (Net, NetReliable, NetServer, BlueprintCallable, BlueprintEvent)
 // Parameters:
@@ -87,26 +107,6 @@ void ASteam_VR_Player_Controller_C::ReturnHMDStatus(bool bHMDEnabled, const stru
 	params.bHMDEnabled = bHMDEnabled;
 	params.HMDOffset = HMDOffset;
 	params.HMDRotation = HMDRotation;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function Steam_VR_Player_Controller.Steam_VR_Player_Controller_C.InitHMD
-// (Net, NetReliable, NetClient, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// bool                           bHasHMD                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-
-void ASteam_VR_Player_Controller_C::InitHMD(bool bHasHMD)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function Steam_VR_Player_Controller.Steam_VR_Player_Controller_C.InitHMD");
-
-	ASteam_VR_Player_Controller_C_InitHMD_Params params;
-	params.bHasHMD = bHasHMD;
 
 	auto flags = fn->FunctionFlags;
 

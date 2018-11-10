@@ -1,4 +1,4 @@
-// ZeroCaliber (0.3.0 DEMO) SDK
+// ZeroCaliber (0.6.0 EA) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -11,6 +11,43 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Functions
 //---------------------------------------------------------------------------
+
+// Function MultiplayerHostWidget.MultiplayerHostWidget_C.ChangeFriendlyFire
+// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
+
+void UMultiplayerHostWidget_C::ChangeFriendlyFire()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function MultiplayerHostWidget.MultiplayerHostWidget_C.ChangeFriendlyFire");
+
+	UMultiplayerHostWidget_C_ChangeFriendlyFire_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function MultiplayerHostWidget.MultiplayerHostWidget_C.InitDataTable
+// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class UDataTable*              DataTable                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+
+void UMultiplayerHostWidget_C::InitDataTable(class UDataTable* DataTable)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function MultiplayerHostWidget.MultiplayerHostWidget_C.InitDataTable");
+
+	UMultiplayerHostWidget_C_InitDataTable_Params params;
+	params.DataTable = DataTable;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function MultiplayerHostWidget.MultiplayerHostWidget_C.SaveEquipments
 // (Public, BlueprintCallable, BlueprintEvent)
@@ -328,14 +365,14 @@ void UMultiplayerHostWidget_C::OnSuccess_7310540C4F8B3170EE2F1A92D1A399EE()
 }
 
 
-// Function MultiplayerHostWidget.MultiplayerHostWidget_C.Construct
-// (BlueprintCosmetic, Event, Public, BlueprintEvent)
+// Function MultiplayerHostWidget.MultiplayerHostWidget_C.RefreshList
+// (BlueprintCallable, BlueprintEvent)
 
-void UMultiplayerHostWidget_C::Construct()
+void UMultiplayerHostWidget_C::RefreshList()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function MultiplayerHostWidget.MultiplayerHostWidget_C.Construct");
+	static auto fn = UObject::FindObject<UFunction>("Function MultiplayerHostWidget.MultiplayerHostWidget_C.RefreshList");
 
-	UMultiplayerHostWidget_C_Construct_Params params;
+	UMultiplayerHostWidget_C_RefreshList_Params params;
 
 	auto flags = fn->FunctionFlags;
 
@@ -362,14 +399,14 @@ void UMultiplayerHostWidget_C::BndEvt__BackButton_K2Node_ComponentBoundEvent_38_
 }
 
 
-// Function MultiplayerHostWidget.MultiplayerHostWidget_C.RefreshList
-// (BlueprintCallable, BlueprintEvent)
+// Function MultiplayerHostWidget.MultiplayerHostWidget_C.Construct
+// (BlueprintCosmetic, Event, Public, BlueprintEvent)
 
-void UMultiplayerHostWidget_C::RefreshList()
+void UMultiplayerHostWidget_C::Construct()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function MultiplayerHostWidget.MultiplayerHostWidget_C.RefreshList");
+	static auto fn = UObject::FindObject<UFunction>("Function MultiplayerHostWidget.MultiplayerHostWidget_C.Construct");
 
-	UMultiplayerHostWidget_C_RefreshList_Params params;
+	UMultiplayerHostWidget_C_Construct_Params params;
 
 	auto flags = fn->FunctionFlags;
 
@@ -611,6 +648,40 @@ void UMultiplayerHostWidget_C::BndEvt__RemovePasswd_K2Node_ComponentBoundEvent_1
 	static auto fn = UObject::FindObject<UFunction>("Function MultiplayerHostWidget.MultiplayerHostWidget_C.BndEvt__RemovePasswd_K2Node_ComponentBoundEvent_141_OnButtonReleasedEvent__DelegateSignature");
 
 	UMultiplayerHostWidget_C_BndEvt__RemovePasswd_K2Node_ComponentBoundEvent_141_OnButtonReleasedEvent__DelegateSignature_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function MultiplayerHostWidget.MultiplayerHostWidget_C.BndEvt__ButtonFriendlyFireRight_K2Node_ComponentBoundEvent_0_OnButtonReleasedEvent__DelegateSignature
+// (BlueprintEvent)
+
+void UMultiplayerHostWidget_C::BndEvt__ButtonFriendlyFireRight_K2Node_ComponentBoundEvent_0_OnButtonReleasedEvent__DelegateSignature()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function MultiplayerHostWidget.MultiplayerHostWidget_C.BndEvt__ButtonFriendlyFireRight_K2Node_ComponentBoundEvent_0_OnButtonReleasedEvent__DelegateSignature");
+
+	UMultiplayerHostWidget_C_BndEvt__ButtonFriendlyFireRight_K2Node_ComponentBoundEvent_0_OnButtonReleasedEvent__DelegateSignature_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function MultiplayerHostWidget.MultiplayerHostWidget_C.BndEvt__ButtonFriendlyFireLeft_K2Node_ComponentBoundEvent_1_OnButtonReleasedEvent__DelegateSignature
+// (BlueprintEvent)
+
+void UMultiplayerHostWidget_C::BndEvt__ButtonFriendlyFireLeft_K2Node_ComponentBoundEvent_1_OnButtonReleasedEvent__DelegateSignature()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function MultiplayerHostWidget.MultiplayerHostWidget_C.BndEvt__ButtonFriendlyFireLeft_K2Node_ComponentBoundEvent_1_OnButtonReleasedEvent__DelegateSignature");
+
+	UMultiplayerHostWidget_C_BndEvt__ButtonFriendlyFireLeft_K2Node_ComponentBoundEvent_1_OnButtonReleasedEvent__DelegateSignature_Params params;
 
 	auto flags = fn->FunctionFlags;
 

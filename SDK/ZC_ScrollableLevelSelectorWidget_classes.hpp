@@ -1,6 +1,6 @@
 #pragma once
 
-// ZeroCaliber (0.3.0 DEMO) SDK
+// ZeroCaliber (0.6.0 EA) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -13,7 +13,7 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // WidgetBlueprintGeneratedClass ScrollableLevelSelectorWidget.ScrollableLevelSelectorWidget_C
-// 0x0148 (0x0350 - 0x0208)
+// 0x0150 (0x0358 - 0x0208)
 class UScrollableLevelSelectorWidget_C : public UUserWidget
 {
 public:
@@ -45,10 +45,10 @@ public:
 	bool                                               IsScaleWanted;                                            // 0x0284(0x0001) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
 	unsigned char                                      UnknownData03[0x3];                                       // 0x0285(0x0003) MISSED OFFSET
 	TArray<struct FLevelStruct>                        Levels;                                                   // 0x0288(0x0010) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance)
-	struct FLevelStruct                                Level;                                                    // 0x0298(0x0050) (Edit, BlueprintVisible, DisableEditOnInstance)
-	struct FCampaignProgressStruct                     CampaignProgress;                                         // 0x02E8(0x0050) (Edit, BlueprintVisible, DisableEditOnInstance)
-	struct FScriptMulticastDelegate                    CurrentLevel;                                             // 0x0338(0x0010) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable)
-	class ULevelWidget_C*                              NewVar_1;                                                 // 0x0348(0x0008) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, IsPlainOldData)
+	struct FLevelStruct                                Level;                                                    // 0x0298(0x0058) (Edit, BlueprintVisible, DisableEditOnInstance)
+	struct FCampaignProgressStruct                     CampaignProgress;                                         // 0x02F0(0x0050) (Edit, BlueprintVisible, DisableEditOnInstance)
+	struct FScriptMulticastDelegate                    CurrentLevel;                                             // 0x0340(0x0010) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable)
+	class ULevelWidget_C*                              NewVar_1;                                                 // 0x0350(0x0008) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, IsPlainOldData)
 
 	static UClass* StaticClass()
 	{
@@ -73,7 +73,7 @@ public:
 	void SetupItemsScale(float Scale);
 	void Construct();
 	void ScrollElementAt(int Index);
-	void InitLevels(TArray<struct FLevelStruct> Levels);
+	void InitLevels(TArray<struct FLevelStruct> Levels, int CurrentLevelIndex);
 	void Tick(struct FGeometry* MyGeometry, float* InDeltaTime);
 	void BndEvt__ScrollButtonRight_K2Node_ComponentBoundEvent_16_OnButtonReleasedEvent__DelegateSignature();
 	void BndEvt__ScrollButtonLeft_K2Node_ComponentBoundEvent_33_OnButtonReleasedEvent__DelegateSignature();

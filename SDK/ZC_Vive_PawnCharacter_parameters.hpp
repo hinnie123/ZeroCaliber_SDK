@@ -1,6 +1,6 @@
 #pragma once
 
-// ZeroCaliber (0.3.0 DEMO) SDK
+// ZeroCaliber (0.6.0 EA) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -13,12 +13,6 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Parameters
 //---------------------------------------------------------------------------
-
-// Function Vive_PawnCharacter.Vive_PawnCharacter_C.CheckSteamControllerType
-struct AVive_PawnCharacter_C_CheckSteamControllerType_Params
-{
-	bool                                               IsKnuckles;                                               // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
-};
 
 // Function Vive_PawnCharacter.Vive_PawnCharacter_C.InitTeleportControllers
 struct AVive_PawnCharacter_C_InitTeleportControllers_Params
@@ -51,12 +45,6 @@ struct AVive_PawnCharacter_C_OnRep_RightControllerOffset_Params
 // Function Vive_PawnCharacter.Vive_PawnCharacter_C.OnRep_LeftControllerOffset
 struct AVive_PawnCharacter_C_OnRep_LeftControllerOffset_Params
 {
-};
-
-// Function Vive_PawnCharacter.Vive_PawnCharacter_C.LoadControllerModels
-struct AVive_PawnCharacter_C_LoadControllerModels_Params
-{
-	bool                                               Succeeded;                                                // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function Vive_PawnCharacter.Vive_PawnCharacter_C.SetGripComponents

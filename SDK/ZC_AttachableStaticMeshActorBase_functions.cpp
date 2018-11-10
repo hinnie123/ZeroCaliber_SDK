@@ -1,4 +1,4 @@
-// ZeroCaliber (0.3.0 DEMO) SDK
+// ZeroCaliber (0.6.0 EA) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -11,6 +11,35 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Functions
 //---------------------------------------------------------------------------
+
+// Function AttachableStaticMeshActorBase.AttachableStaticMeshActorBase_C.IsOtherHandHoldingWeapon
+// (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class UGripMotionControllerComponent* Controller                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+// class UGripMotionControllerComponent* OtherController                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+// bool                           Bool                           (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+// class AWeaponBase_C*           Weapon                         (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+
+void AAttachableStaticMeshActorBase_C::IsOtherHandHoldingWeapon(class UGripMotionControllerComponent* Controller, class UGripMotionControllerComponent* OtherController, bool* Bool, class AWeaponBase_C** Weapon)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function AttachableStaticMeshActorBase.AttachableStaticMeshActorBase_C.IsOtherHandHoldingWeapon");
+
+	AAttachableStaticMeshActorBase_C_IsOtherHandHoldingWeapon_Params params;
+	params.Controller = Controller;
+	params.OtherController = OtherController;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	if (Bool != nullptr)
+		*Bool = params.Bool;
+	if (Weapon != nullptr)
+		*Weapon = params.Weapon;
+}
+
 
 // Function AttachableStaticMeshActorBase.AttachableStaticMeshActorBase_C.ModifyCollisionWhenBlocked
 // (Public, BlueprintCallable, BlueprintEvent)
@@ -247,6 +276,30 @@ void AAttachableStaticMeshActorBase_C::AttachSound(float ReloadType)
 
 	AAttachableStaticMeshActorBase_C_AttachSound_Params params;
 	params.ReloadType = ReloadType;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function AttachableStaticMeshActorBase.AttachableStaticMeshActorBase_C.OnGripRelease
+// (Event, Public, HasOutParms, BlueprintEvent)
+// Parameters:
+// class UGripMotionControllerComponent** ReleasingController            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+// struct FBPActorGripInformation* GripInformation                (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// bool*                          bWasSocketed                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+
+void AAttachableStaticMeshActorBase_C::OnGripRelease(class UGripMotionControllerComponent** ReleasingController, struct FBPActorGripInformation* GripInformation, bool* bWasSocketed)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function AttachableStaticMeshActorBase.AttachableStaticMeshActorBase_C.OnGripRelease");
+
+	AAttachableStaticMeshActorBase_C_OnGripRelease_Params params;
+	params.ReleasingController = ReleasingController;
+	params.GripInformation = GripInformation;
+	params.bWasSocketed = bWasSocketed;
 
 	auto flags = fn->FunctionFlags;
 
